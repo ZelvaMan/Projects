@@ -1,0 +1,36 @@
+﻿@using ProductManager.Models
+
+@{
+	ViewData["Title"] = "ShowProducts";
+	var products = ViewBag.data;
+	Layout = "_Layout";
+}
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<h1>Products</h1>
+<table class="table table-striped table-sm">
+	<thead>
+	<tr>
+		
+			<th scope="col"> <b>ID</b></th>
+			<th scope="col"> <b>Product name</b></th>
+			<th scope="col"> <b>Price</b></th>
+			<th scope="col"> <b>In stock</b></th>
+			<th scope="col"> <b>Buy</b></th>
+		
+	</tr>
+	</thead>
+	@foreach (Product pr in products)
+	{
+	<tr>
+		<th> @pr.ID</th>
+		<th> @pr.Name</th>
+		<th> @pr.Price</th>
+		<th > <text class="text-primary">@pr.InStock </text></th>
+		<th><a href="/Product/@pr.ID" ><button class="btn btn-primary">Create</button></a></th>
+	</tr>
+	}
+</table>

@@ -1,0 +1,6 @@
+﻿
+<h1>@ViewBag.Number</h1>
+@using (Html.BeginForm())
+{
+	<input type="submit" name="response" value="Increase Number" formaction=@Url.Action("Default") formmethod="post" class="btn btn-primary"/>
+}
