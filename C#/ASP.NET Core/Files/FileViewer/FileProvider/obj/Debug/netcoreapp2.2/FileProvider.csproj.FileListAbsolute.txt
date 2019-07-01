@@ -1,0 +1,12 @@
+C:\Dokumenty\GIT\Projects\C#\ASP.NET Core\Files\FileViewer\FileProvider\bin\Debug\netcoreapp2.2\FileProvider.deps.json
+C:\Dokumenty\GIT\Projects\C#\ASP.NET Core\Files\FileViewer\FileProvider\bin\Debug\netcoreapp2.2\FileProvider.dll
+C:\Dokumenty\GIT\Projects\C#\ASP.NET Core\Files\FileViewer\FileProvider\bin\Debug\netcoreapp2.2\FileProvider.pdb
+C:\Dokumenty\GIT\Projects\C#\ASP.NET Core\Files\FileViewer\FileProvider\obj\Debug\netcoreapp2.2\FileProvider.csprojAssemblyReference.cache
+C:\Dokumenty\GIT\Projects\C#\ASP.NET Core\Files\FileViewer\FileProvider\obj\Debug\netcoreapp2.2\FileProvider.csproj.CoreCompileInputs.cache
+C:\Dokumenty\GIT\Projects\C#\ASP.NET Core\Files\FileViewer\FileProvider\obj\Debug\netcoreapp2.2\FileProvider.AssemblyInfoInputs.cache
+C:\Dokumenty\GIT\Projects\C#\ASP.NET Core\Files\FileViewer\FileProvider\obj\Debug\netcoreapp2.2\FileProvider.AssemblyInfo.cs
+C:\Dokumenty\GIT\Projects\C#\ASP.NET Core\Files\FileViewer\FileProvider\obj\Debug\netcoreapp2.2\FileProvider.dll
+C:\Dokumenty\GIT\Projects\C#\ASP.NET Core\Files\FileViewer\FileProvider\obj\Debug\netcoreapp2.2\FileProvider.pdb
+C:\Dokumenty\GIT\Projects\C#\ASP.NET Core\Files\FileViewer\FileProvider\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.WebUtilities.dll
+C:\Dokumenty\GIT\Projects\C#\ASP.NET Core\Files\FileViewer\FileProvider\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.WebUtilities.xml
+C:\Dokumenty\GIT\Projects\C#\ASP.NET Core\Files\FileViewer\FileProvider\obj\Debug\netcoreapp2.2\FileProvider.csproj.CopyComplete

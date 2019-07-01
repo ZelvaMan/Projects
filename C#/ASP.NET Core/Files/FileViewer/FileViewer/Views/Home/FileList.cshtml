@@ -1,0 +1,87 @@
+﻿@using System.IO
+@using Microsoft.AspNetCore.Http.Extensions
+@using Microsoft.AspNetCore.WebUtilities
+
+@{
+	ViewData["Title"] = "FileList";
+	Layout = "~/Views/_Layout.cshtml";
+	List<FileSystemInfo> files = null;
+	if (ViewBag.files != null)
+	{
+		files = ViewBag.files;
+	}
+
+}
+
+
+<h1>File List</h1>
+<table class="table table-striped">
+	<thead class="thead-dark">
+	<tr>
+		<th>Title</th>
+		<th>Extension</th>
+		<th>Path</th>
+		<th>Size in kb</th>
+		<th>Info</th>
+	</tr>
+	</thead>
+	<tbody>
+	@if (ViewBag.Parent != null)
+	{
+		<tr>
+			<td><a class="btn btn-link" href="@QueryHelpers.AddQueryString("/files","path", ViewBag.Parent)"> ... </a></td>
+			<td></td><td></td><td></td><td></td>
+		</tr>
+	}
+	@if (files != null)
+	{
+		
+		@foreach (var file in files)
+		 {
+		<tr>
+			@if (file is DirectoryInfo)
+			{
+				<td> <a class="btn btn-link" href="@QueryHelpers.AddQueryString("/files","path", file.FullName)"> @file.Name </a> </td>
+			}
+			else
+			{
+				<td>@file.Name</td>
+			}
+			
+			<td>@file.Extension</td>
+			<td>@file.FullName</td>
+			@if (file is FileInfo)
+			{
+				<td> @((file as FileInfo).Length)</td>
+			}
+			else
+			{
+				<td></td>
+			}
+			<td>
+			@if (file is FileInfo)
+			{
+				<button class="btn btn-primary"
+				        onclick="window.location.href = '@QueryHelpers.AddQueryString("files/info", "path", file.FullName)'" >More info</button>
+			}
+			else
+			{
+				@:
+			}
+			</td>
+		</tr>
+
+		 }
+	}
+	else
+	{
+			 <tr>
+			 	<td> <b class="text-danger">Error while getting files </b></td>
+			 	<td></td>
+			 	<td><b class="text-warning">Unable to get files in folder check your permision </b></td>
+			 	<td></td><td></td>
+			 </tr>
+	}
+	</tbody>
+</table>
+

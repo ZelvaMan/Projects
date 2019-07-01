@@ -1,0 +1,51 @@
+﻿@using System.IO
+
+@{
+    ViewData["Title"] = "File Info";
+    Layout = "~/Views/_Layout.cshtml";
+	FileInfo info = ViewBag.Info;
+}
+
+<h1>File Info</h1>
+<div class="container">
+	<div class="row">
+		<div class="col-md">Title </div>
+		<div class="col-md">@info.Name</div>
+	</div>
+	<div class="row">
+		<div class="col-md">Extension</div>
+		<div class="col-md">@info.Extension</div>
+	</div>
+	<div class="row">
+		<div class="col-md">Full path</div>
+		<div class="col-md">@info.FullName</div>
+	</div>
+	<div class="row">
+		<div class="col-md">Leght</div>
+		<div class="col-md">@(info.Length / 1000)kb</div>
+	</div>
+	<div class="row">
+		<div class="col-md">Creation time</div>
+		<div class="col-md">@info.CreationTime</div>
+	</div>
+	<div class="row">
+		<div class="col-md">Last write time</div>
+		<div class="col-md">@info.LastWriteTime </div>
+	</div>
+
+	<div class="row">
+		<h2>Attributes</h2>
+	</div>
+	@foreach (FileAttributes suit in (FileAttributes[])Enum.GetValues(typeof(FileAttributes)))
+	{
+		<div class="row">
+			<div class="col-md"> @suit.ToString()</div>
+			<div class="col-md">
+				<input type="checkbox" name="vehicle" onclick="return false;" value="Car"  @if ((info.Attributes & suit) == suit) { @: checked
+							 }>
+			</div>
+		</div>
+	}
+
+
+</div>
