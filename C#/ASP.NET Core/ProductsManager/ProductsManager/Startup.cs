@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using ProductsManager.Managers;
 using ProductsManager.Models;
 
 namespace ProductsManager
@@ -17,7 +18,10 @@ namespace ProductsManager
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddMvc();
-			services.AddSingleton<ProductCollections>();
+			services.AddSingleton<ApplicationState>();
+			services.AddScoped<OrderManager>();
+			services.AddScoped<ProductManager>();
+			services.AddScoped<ShopManager>();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

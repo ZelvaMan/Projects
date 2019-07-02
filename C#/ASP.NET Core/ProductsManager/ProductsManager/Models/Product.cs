@@ -12,12 +12,4 @@ namespace ProductsManager.Models
 		public int Price { get; set; }
 		public int InStock { get; set; }
 	}
-
-	public struct Order
-	{
-		public int ID { get; set; }
-		public int Quantity { get; set; }
-		public int TotalPrice { get; set; }
-
-	}
 }

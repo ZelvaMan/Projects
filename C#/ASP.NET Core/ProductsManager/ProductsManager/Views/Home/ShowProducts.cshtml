@@ -15,7 +15,7 @@
 	<thead>
 	<tr>
 		
-			<th scope="col"> <b>ID</b></th>
+			<th scope="col"> <b>productId</b></th>
 			<th scope="col"> <b>Product name</b></th>
 			<th scope="col"> <b>Price</b></th>
 			<th scope="col"> <b>In stock</b></th>
@@ -30,7 +30,8 @@
 		<th> @pr.Name</th>
 		<th> @pr.Price</th>
 		<th > <text class="text-primary">@pr.InStock </text></th>
-		<th><a href="/Product/@pr.ID" ><button class="btn btn-primary">Create</button></a></th>
+	<th><a asp-controller="Home" asp-action="ShowBuyProduct" asp-route-ProductID="@pr.ID" ><button class="btn btn-primary">Buy
+				</button></a></th>
 	</tr>
 	}
 </table>
