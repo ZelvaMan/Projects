@@ -8,6 +8,7 @@ namespace ProductsManager.Managers
 	{
 		private OrderManager orderManager;
 		private ProductManager productManager;
+		private UserManager userManager;
 
 		public List<Product> Products
 		{
@@ -17,11 +18,16 @@ namespace ProductsManager.Managers
 		{
 			get { return orderManager.Orders; }
 		}
+		public List<User> Users
+		{
+			get { return userManager.Users; }
+		}
 
-		public ShopManager(OrderManager orderManager, ProductManager productManager)
+		public ShopManager(OrderManager orderManager, ProductManager productManager, UserManager userManager)
 		{
 			this.orderManager = orderManager;
 			this.productManager = productManager;
+			this.userManager = userManager;
 		}
 
 
@@ -42,6 +48,12 @@ namespace ProductsManager.Managers
 		public Product FindProductById(int productId)
 		{
 			return productManager.FindProductById(productId);
+		}
+
+		public void DeleteOrder( int orderId )
+		{
+			Order orderToDelete = orderManager.FindOrderByOrderId(orderId);
+			orderManager.RemoveOrder(orderToDelete);
 		}
 	}
 }

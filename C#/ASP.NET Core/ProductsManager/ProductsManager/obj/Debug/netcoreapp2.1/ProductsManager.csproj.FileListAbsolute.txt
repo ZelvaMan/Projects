@@ -27,3 +27,4 @@ C:\Users\jan.rada\Documents\GitHub\MyProjects\C#\ASP.NET Core\ProductsManager\Pr
 C:\Users\jan.rada\Documents\GitHub\MyProjects\C#\ASP.NET Core\ProductsManager\ProductsManager\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
 C:\Users\jan.rada\Documents\GitHub\MyProjects\C#\ASP.NET Core\ProductsManager\ProductsManager\obj\Debug\netcoreapp2.1\Razor\Pages\_ViewImports.g.cshtml.cs
 C:\Users\jan.rada\Documents\GitHub\MyProjects\C#\ASP.NET Core\ProductsManager\ProductsManager\obj\Debug\netcoreapp2.1\Razor\Views\Home\ShowProducts.g.cshtml.cs
+C:\Users\jan.rada\Documents\GitHub\MyProjects\C#\ASP.NET Core\ProductsManager\ProductsManager\obj\Debug\netcoreapp2.1\Razor\Views\Home\ShowUsers.g.cshtml.cs

@@ -26,9 +26,9 @@
 			<th> @pr.Quantity</th>
 			<th> @pr.TotalPrice</th>
 			<th>
-				<a href="/Product/remove/@pr.ProductID">
+				<a  asp-controller="Home" asp-action="DeleteOrder" asp-route-id="@pr.OrderId">
 					<button class="btn btn-primary">
-						Buy
+						Remove
 					</button>
 				</a>
 			</th>

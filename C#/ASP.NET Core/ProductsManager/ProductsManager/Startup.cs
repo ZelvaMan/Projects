@@ -21,6 +21,7 @@ namespace ProductsManager
 			services.AddSingleton<ApplicationState>();
 			services.AddScoped<OrderManager>();
 			services.AddScoped<ProductManager>();
+			services.AddScoped<UserManager>();
 			services.AddScoped<ShopManager>();
 		}
 

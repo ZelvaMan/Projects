@@ -57,6 +57,18 @@ namespace ProductsManager.Controlers
 			return View();
 		}
 
-		
+		[HttpGet("Users")]
+		public ActionResult ShowUsers()
+		{
+			ViewBag.Users = manager.Users;
+			return View();
+		}
+
+		[HttpGet("Order/delete/{id}")]
+		public ActionResult DeleteOrder(int id)
+		{
+			manager.DeleteOrder(id);
+			return RedirectToAction(nameof(ShowOrders));
+		}
 	}
 }

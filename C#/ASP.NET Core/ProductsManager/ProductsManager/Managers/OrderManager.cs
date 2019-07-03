@@ -31,7 +31,7 @@ namespace ProductsManager.Managers
 			}
 		}
 
-		public List<Order> FindOrdersById(int productId)
+		public List<Order> FindOrdersByProductId(int productId)
 		{
 			try
 			{
@@ -43,6 +43,10 @@ namespace ProductsManager.Managers
 			}
 		}
 
+		public Order FindOrderByOrderId(int OrderId)
+		{
+			return state.Orders.Find((order => order.OrderId == OrderId));
+		}
 		public void AddOrder( int productId, int price, int quantity)
 		{
 			int id = state.LastProductId++;
