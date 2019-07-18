@@ -19,8 +19,10 @@ namespace ProductsManager.Controlers
 
 		public ActionResult Index()
 		{
-			return RedirectToAction("ShowProducts");
+			return RedirectToAction(nameof(ShowProducts));
 		}
+
+		#region Products
 
 		[HttpGet("Product")]
 		public ActionResult ShowProducts()
@@ -42,12 +44,31 @@ namespace ProductsManager.Controlers
 		}
 
 		//[HttpPost("Product/buy/{productId}")]
+
 		[HttpPost("Product/{productId}")]
 		public ActionResult BuyProducts(int productId, int quantity)
 		{
 			manager.Buy(productId, quantity);
-			return RedirectToAction("ShowProducts");
+			return RedirectToAction(nameof(ShowProducts));
 
+		}
+
+		[HttpGet("Product/remove/{productId}")]
+		public ActionResult RemoveProduct(int productId)
+		{
+			manager.DeleteProduct(productId);
+			return RedirectToAction(nameof(ShowProducts));
+		}
+
+		#endregion
+
+		#region Orders
+
+		[HttpGet("Order/delete/{id}")]
+		public ActionResult DeleteOrder(int id)
+		{
+			manager.DeleteOrder(id);
+			return RedirectToAction(nameof(ShowOrders));
 		}
 
 		[HttpGet("Order")]
@@ -57,18 +78,13 @@ namespace ProductsManager.Controlers
 			return View();
 		}
 
+			#endregion
+
 		[HttpGet("Users")]
 		public ActionResult ShowUsers()
 		{
 			ViewBag.Users = manager.Users;
 			return View();
-		}
-
-		[HttpGet("Order/delete/{id}")]
-		public ActionResult DeleteOrder(int id)
-		{
-			manager.DeleteOrder(id);
-			return RedirectToAction(nameof(ShowOrders));
 		}
 	}
 }

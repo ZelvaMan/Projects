@@ -65,7 +65,7 @@ namespace ProductsManager.Managers
 
 		public void RemoveProduct(int productId)
 		{
-			state.Products.Remove(state.Products.Find((product => product.ID == productId)));
+			state.Products.Remove(FindProductById(productId));
 		}
 
 		public Product FindProductById(int productId)

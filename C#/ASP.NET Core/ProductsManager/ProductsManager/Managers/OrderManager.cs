@@ -18,6 +18,9 @@ namespace ProductsManager.Managers
 		{
 			get { return state.Orders; }
 		}
+
+		#region Removing
+
 		public void RemoveOrder(Order order)
 		{
 			state.Orders.Remove(order);
@@ -30,6 +33,11 @@ namespace ProductsManager.Managers
 				RemoveOrder(order);
 			}
 		}
+		
+
+		#endregion
+
+		#region Finding
 
 		public List<Order> FindOrdersByProductId(int productId)
 		{
@@ -47,6 +55,9 @@ namespace ProductsManager.Managers
 		{
 			return state.Orders.Find((order => order.OrderId == OrderId));
 		}
+
+		#endregion
+
 		public void AddOrder( int productId, int price, int quantity)
 		{
 			int id = state.LastProductId++;

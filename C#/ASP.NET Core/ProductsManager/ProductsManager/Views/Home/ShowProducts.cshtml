@@ -19,7 +19,8 @@
 			<th scope="col"> <b>Product name</b></th>
 			<th scope="col"> <b>Price</b></th>
 			<th scope="col"> <b>In stock</b></th>
-			<th scope="col"> <b>Buy</b></th>
+		<th scope="col"> <b>Buy</b></th>
+		<th scope="col"><b>Remove</b></th>
 		
 	</tr>
 	</thead>
@@ -29,9 +30,23 @@
 		<th> @pr.ID</th>
 		<th> @pr.Name</th>
 		<th> @pr.Price</th>
-		<th > <text class="text-primary">@pr.InStock </text></th>
-	<th><a asp-controller="Home" asp-action="ShowBuyProduct" asp-route-ProductID="@pr.ID" ><button class="btn btn-primary">Buy
-				</button></a></th>
+		<th> <text class="text-primary">@pr.InStock </text></th>
+		<th>
+			<a asp-controller="Home" asp-action="ShowBuyProduct" asp-route-productID="@pr.ID">
+				<button class="btn btn-primary">
+					Buy
+				</button>
+			</a>
+		</th>
+
+		<th>
+			<a asp-controller="Home" asp-action="RemoveProduct" asp-route-productID="@pr.ID">
+				<button class="btn btn-primary">
+					Remove
+				</button>
+			</a>
+		</th>
 	</tr>
+
 	}
 </table>

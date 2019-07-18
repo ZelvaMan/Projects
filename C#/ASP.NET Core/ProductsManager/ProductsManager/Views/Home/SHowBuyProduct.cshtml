@@ -48,14 +48,10 @@
 
 	<div class="row">
 		<form asp-action="BuyProducts" asp-controller="Home" asp-route-ProductID="@product.ID" method="post">
-			<div class="col-sm">
-				<label>Quantity</label>
+			<label>Quantity</label>
 				<input placeholder=" " id="Quantity" type="number" name="Quantity" min="1" max="@product.InStock"/>
-			</div>
 
-			<div class="col-sm">
-				<input type="submit" value="Buy"/>
-			</div>
+			<input type="submit" value="Buy"/>
 		</form>
 	</div>
 </div>

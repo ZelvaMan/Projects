@@ -55,5 +55,11 @@ namespace ProductsManager.Managers
 			Order orderToDelete = orderManager.FindOrderByOrderId(orderId);
 			orderManager.RemoveOrder(orderToDelete);
 		}
+
+		public void DeleteProduct(int productId)
+		{
+			productManager.RemoveProduct(productId);
+			orderManager.RemoveOrders(orderManager.FindOrdersByProductId(productId));
+		}
 	}
 }
