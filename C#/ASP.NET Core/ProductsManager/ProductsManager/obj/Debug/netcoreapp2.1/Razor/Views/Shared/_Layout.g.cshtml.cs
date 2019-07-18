@@ -49,7 +49,7 @@ namespace AspNetCore
             WriteLiteral("<!DOCTYPE html>\r\n\r\n<html>\r\n");
             EndContext();
             BeginContext(27, 319, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0c0a50e2780a44848bb67c1ae3235943", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e1c0ecac664f4a918e7dfd7545530dc4", async() => {
                 BeginContext(33, 282, true);
                 WriteLiteral(@"
 	<meta name=""viewport"" content=""width=device-width"" />
@@ -83,7 +83,7 @@ namespace AspNetCore
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(348, 1444, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4227c394df2b429fbfa2b6db56db8e4c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "53dcbf41cd8346a9aad877776829f0f2", async() => {
                 BeginContext(354, 864, true);
                 WriteLiteral(@"
 	<script src=""https://code.jquery.com/jquery-3.3.1.slim.min.js"" integrity=""sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"" crossorigin=""anonymous""></script>
@@ -98,7 +98,7 @@ namespace AspNetCore
 					");
                 EndContext();
                 BeginContext(1218, 119, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1059d58b3f6243968a494084e9df7126", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "94c15cbea84c45fbbb54140b4a76a438", async() => {
                     BeginContext(1286, 47, true);
                     WriteLiteral("Products <span class=\"sr-only\">(current)</span>");
                     EndContext();
@@ -123,7 +123,7 @@ namespace AspNetCore
                 WriteLiteral("\r\n\t\t\t\t</li>\r\n\t\t\t\t<li class=\"nav-item active\">\r\n\t\t\t\t\t");
                 EndContext();
                 BeginContext(1389, 113, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3f40f75d8f0b44619dcd0465eb724a14", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d728f142e906493daf39fcd287a14750", async() => {
                     BeginContext(1455, 43, true);
                     WriteLiteral("Cart <span class=\"sr-only\">(current)</span>");
                     EndContext();

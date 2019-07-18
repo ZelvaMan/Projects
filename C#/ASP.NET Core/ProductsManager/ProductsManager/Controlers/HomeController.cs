@@ -32,26 +32,19 @@ namespace ProductsManager.Controlers
 			{
 				ViewBag.data = products;
 			}
-
+			ViewBag.manager = manager;
 			return View();
 		}
 
 		[HttpGet("Product/{productId}")]
 		public ActionResult ShowBuyProduct(int productId)
 		{
+
 			ViewBag.Product = manager.FindProductById(productId);
 			return View();
 		}
 
 		//[HttpPost("Product/buy/{productId}")]
-
-		[HttpPost("Product/{productId}")]
-		public ActionResult AddToCart(int productId, int quantity)
-		{
-			manager.AddToCart(productId, quantity);
-			return RedirectToAction(nameof(ShowProducts));
-
-		}
 
 		[HttpGet("Product/remove/{productId}")]
 		public ActionResult RemoveProduct(int productId)
@@ -63,6 +56,14 @@ namespace ProductsManager.Controlers
 		#endregion
 
 		#region Cart
+
+		[HttpPost("Product/{productId}")]
+		public ActionResult AddToCart(int productId, int quantity)
+		{
+			manager.AddToCart(productId, quantity);
+			return RedirectToAction(nameof(ShowProducts));
+
+		}
 
 		[HttpGet("cart/delete/{id}")]
 		public ActionResult DeleteOrder(int id)

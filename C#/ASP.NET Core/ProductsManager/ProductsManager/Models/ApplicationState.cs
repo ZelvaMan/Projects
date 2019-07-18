@@ -9,7 +9,7 @@ namespace ProductsManager.Models
 	{
 		public List<Product> Products { get; set; } = new List<Product>();
 
-		public List<Order> Cart { get; set; } = new List<Order>();
+		public List<OrderItem> Cart { get; set; } = new List<OrderItem>();
 
 		public List<User> Users { get; set; } = new List<User>();
 

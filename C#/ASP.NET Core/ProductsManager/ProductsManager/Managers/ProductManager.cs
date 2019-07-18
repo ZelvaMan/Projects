@@ -32,18 +32,13 @@ namespace ProductsManager.Managers
 			//load products from JSON file
 			if (state.Products.Count == 0)
 			{
+				
+			
 
-				AddProduct("product1", 101, 2);
-				AddProduct("product2", 102, 4);
-				AddProduct("product3", 103, 6);
-				AddProduct("product4", 104, 8);
-				AddProduct("product5", 105, 10);
-				AddProduct("product6", 106, 12);
-				AddProduct("product7", 107, 14);
-				AddProduct("product8", 108, 16);
-				AddProduct("product9", 109, 18);
-				AddProduct("product10", 110, 20);
-
+			for (int i = 1; i < 25; i++)
+			{
+				AddProduct("product" + i.ToString("D2"),i*25,i*2);
+			}
 			}
 			Order();
 		}
@@ -82,7 +77,20 @@ namespace ProductsManager.Managers
 
 		public void ChangeStock(int productId, int quantity)
 		{
-			FindProductById(productId).InStock += quantity;
+			var pr = FindProductById(productId);
+			pr.InStock += quantity;
+			if (pr.InStock <= 0)
+			{
+				pr.InStock = 0;
+				SetAvailability(Availability.UnAvailable,productId);
+			}
+			else
+				SetAvailability(Availability.Avalible, productId);
+		}
+
+		public void SetAvailability(Availability productAvailability, int productId)
+		{
+			FindProductById(productId).ProductAvailability = productAvailability;
 		}
 	}
 }

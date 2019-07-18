@@ -119,7 +119,7 @@ using ProductsManager.Models;
             WriteLiteral("</th>\r\n\t\t\t<th>\r\n\t\t\t\t");
             EndContext();
             BeginContext(546, 156, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "27a235c503fe42ab94cc8dcf52101caa", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "20925b7572264b1d8f8a4d31ccade6dd", async() => {
                 BeginContext(623, 75, true);
                 WriteLiteral("\r\n\t\t\t\t\t<button class=\"btn btn-primary\">\r\n\t\t\t\t\t\tRemove\r\n\t\t\t\t\t</button>\r\n\t\t\t\t");
                 EndContext();
@@ -164,12 +164,12 @@ using ProductsManager.Models;
             WriteLiteral("\r\n\t\r\n</table>\r\n<div class=\"col-md-12 text-center\">\r\n\t");
             EndContext();
             BeginContext(780, 136, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5946e243d0304f79905b07ba81ca393c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "db72edc558d044268b4c4e92ac5b2f5d", async() => {
                 BeginContext(800, 4, true);
                 WriteLiteral("\r\n\t\t");
                 EndContext();
                 BeginContext(804, 102, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3ca8f93a24f24b5ba9eb619883399366", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "17d00dd45eb4411f8baf263ebfbb1aa8", async() => {
                     BeginContext(885, 12, true);
                     WriteLiteral("\r\n\t\t\tBuy\r\n\t\t");
                     EndContext();

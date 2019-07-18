@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using ProductsManager.Models;
 
 namespace ProductsManager.Managers
 {
 	public class ShopManager
 	{
-		private OrderManager orderManager;
+		private OrderItemManager orderManager;
 		private ProductManager productManager;
 		private UserManager userManager;
 
@@ -14,16 +15,16 @@ namespace ProductsManager.Managers
 		{
 			get { return productManager.Products; }
 		}
-		public List<Order> Orders
+		public List<OrderItem> Orders
 		{
-			get { return orderManager.Orders; }
+			get { return orderManager.OrderItems; }
 		}
 		public List<User> Users
 		{
 			get { return userManager.Users; }
 		}
 
-		public ShopManager(OrderManager orderManager, ProductManager productManager, UserManager userManager)
+		public ShopManager(OrderItemManager orderManager, ProductManager productManager, UserManager userManager)
 		{
 			this.orderManager = orderManager;
 			this.productManager = productManager;
@@ -33,11 +34,18 @@ namespace ProductsManager.Managers
 
 		public void AddToCart(int productId, int quantity)
 		{
+
 			Product product = productManager.FindProductById(productId);
 			if (quantity <= product.InStock)
 			{
-				//productManager.ChangeStock(productId, -quantity);
-				orderManager.AddOrder(productId, product.Price * quantity, quantity);
+				if (product.ProductAvailability == Availability.Avalible)
+				{
+					//productManager.ChangeStock(productId, -quantity);
+					orderManager.AddOrderItem(productId, product.Price, quantity);
+					productManager.SetAvailability(Availability.InCart,productId);
+				}
+
+				orderManager.changeQuantity(productId, quantity);
 			}
 			else
 			{
@@ -47,9 +55,10 @@ namespace ProductsManager.Managers
 
 		public void Buy()
 		{
-			foreach (Order ord in orderManager.Orders)
+			foreach (OrderItem ord in orderManager.OrderItems)
 			{
 				productManager.ChangeStock(ord.ProductID, -ord.Quantity);
+				
 			}
 			orderManager.RemoveAll();
 		}
@@ -58,16 +67,17 @@ namespace ProductsManager.Managers
 			return productManager.FindProductById(productId);
 		}
 
-		public void DeleteOrder( int orderId )
+		public void DeleteOrder(int orderId)
 		{
-			Order orderToDelete = orderManager.FindOrderByOrderId(orderId);
-			orderManager.RemoveOrder(orderToDelete);
+			OrderItem orderToDelete = orderManager.FindOrderItemByOrderId(orderId);
+			orderManager.RemoveOrderItem(orderToDelete);
 		}
 
 		public void DeleteProduct(int productId)
 		{
 			productManager.RemoveProduct(productId);
-			orderManager.RemoveOrders(orderManager.FindOrdersByProductId(productId));
+			orderManager.RemoveOrderItem(orderManager.FindOrderItemByProductId(productId));
 		}
+
 	}
 }

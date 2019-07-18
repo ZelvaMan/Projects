@@ -19,7 +19,7 @@ namespace ProductsManager
 		{
 			services.AddMvc();
 			services.AddSingleton<ApplicationState>();
-			services.AddScoped<OrderManager>();
+			services.AddScoped<OrderItemManager>();
 			services.AddScoped<ProductManager>();
 			services.AddScoped<UserManager>();
 			services.AddScoped<ShopManager>();

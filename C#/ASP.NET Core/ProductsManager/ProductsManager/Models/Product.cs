@@ -11,5 +11,6 @@ namespace ProductsManager.Models
 		public string Name { get;  set; }
 		public int Price { get; set; }
 		public int InStock { get; set; }
+		public Availability ProductAvailability { get; set; } = Availability.Avalible;
 	}
 }

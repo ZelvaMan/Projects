@@ -1,8 +1,10 @@
-﻿@using ProductsManager.Models
+﻿@using ProductsManager.Managers
+@using ProductsManager.Models
 
 @{
 	ViewData["Title"] = "ShowProducts";
 	var products = ViewBag.data;
+	ShopManager manager = ViewBag.manager;
 	Layout = "_Layout";
 }
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -19,7 +21,7 @@
 			<th scope="col"> <b>Product name</b></th>
 			<th scope="col"> <b>Price</b></th>
 			<th scope="col"> <b>In stock</b></th>
-		<th scope="col"> <b>AddToCart</b></th>
+		<th scope="col"> <b>Add to cart</b></th>
 		<th scope="col"><b>Remove</b></th>
 		
 	</tr>
@@ -32,11 +34,28 @@
 		<th> @pr.Price</th>
 		<th> <text class="text-primary">@pr.InStock </text></th>
 		<th>
-			<a asp-controller="Home" asp-action="ShowBuyProduct" asp-route-productID="@pr.ID">
-				<button class="btn btn-primary">
-					AddToCart
-				</button>
-			</a>
+			@if (pr.ProductAvailability != Availability.UnAvailable)
+			{
+				<a asp-controller="Home" asp-action="ShowBuyProduct" asp-route-productID="@pr.ID">
+					<button class="btn btn-primary">
+						@switch (pr.ProductAvailability)
+						{
+							case Availability.InCart:
+								@:Change quantity
+								break;
+
+							case Availability.Avalible:
+								@:	AddToCart
+								break;
+
+						}
+					</button>
+				</a>
+			}
+			else
+			{
+				@:<p class="text-warning">Product isn't in stock</p>
+			}
 		</th>
 
 		<th>
