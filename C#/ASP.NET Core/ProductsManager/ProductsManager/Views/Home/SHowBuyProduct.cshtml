@@ -9,7 +9,7 @@
 
 
 <div class="container">
-	<div class="row"><h1>Buy Product</h1></div>
+	<div class="row"><h1>AddToCart Product</h1></div>
 	<div class="row">
 		<div class="col-sm">
 			<b>Product Id</b>
@@ -47,11 +47,11 @@
 	</div>
 
 	<div class="row">
-		<form asp-action="BuyProducts" asp-controller="Home" asp-route-ProductID="@product.ID" method="post">
+		<form asp-action="AddToCart" asp-controller="Home" asp-route-ProductID="@product.ID" method="post">
 			<label>Quantity</label>
 				<input placeholder=" " id="Quantity" type="number" name="Quantity" min="1" max="@product.InStock"/>
 
-			<input type="submit" value="Buy"/>
+			<input type="submit" value="Add to cart"/>
 		</form>
 	</div>
 </div>

@@ -16,14 +16,14 @@ namespace ProductsManager.Managers
 
 		public List<Order> Orders
 		{
-			get { return state.Orders; }
+			get { return state.Cart; }
 		}
 
 		#region Removing
 
 		public void RemoveOrder(Order order)
 		{
-			state.Orders.Remove(order);
+			state.Cart.Remove(order);
 		}
 
 		public void RemoveOrders(List<Order> orders)
@@ -33,8 +33,11 @@ namespace ProductsManager.Managers
 				RemoveOrder(order);
 			}
 		}
-		
 
+		public void RemoveAll()
+		{
+			state.Cart.Clear();
+		}
 		#endregion
 
 		#region Finding
@@ -43,7 +46,7 @@ namespace ProductsManager.Managers
 		{
 			try
 			{
-				return state.Orders.FindAll((order => order.ProductID == productId));
+				return state.Cart.FindAll((order => order.ProductID == productId));
 			}
 			catch (Exception ex)
 			{
@@ -53,7 +56,7 @@ namespace ProductsManager.Managers
 
 		public Order FindOrderByOrderId(int OrderId)
 		{
-			return state.Orders.Find((order => order.OrderId == OrderId));
+			return state.Cart.Find((order => order.OrderId == OrderId));
 		}
 
 		#endregion
@@ -61,7 +64,7 @@ namespace ProductsManager.Managers
 		public void AddOrder( int productId, int price, int quantity)
 		{
 			int id = state.LastProductId++;
-			state.Orders.Add(new Order() { OrderId = id, TotalPrice = price,  ProductID = productId, Quantity = quantity});
+			state.Cart.Add(new Order() { OrderId = id, TotalPrice = price,  ProductID = productId, Quantity = quantity});
 		}
 	}
 }

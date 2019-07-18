@@ -31,12 +31,12 @@ namespace ProductsManager.Managers
 		}
 
 
-		public void Buy(int productId, int quantity)
+		public void AddToCart(int productId, int quantity)
 		{
 			Product product = productManager.FindProductById(productId);
 			if (quantity <= product.InStock)
 			{
-				productManager.ChangeStock(productId, -quantity);
+				//productManager.ChangeStock(productId, -quantity);
 				orderManager.AddOrder(productId, product.Price * quantity, quantity);
 			}
 			else
@@ -45,6 +45,14 @@ namespace ProductsManager.Managers
 			}
 		}
 
+		public void Buy()
+		{
+			foreach (Order ord in orderManager.Orders)
+			{
+				productManager.ChangeStock(ord.ProductID, -ord.Quantity);
+			}
+			orderManager.RemoveAll();
+		}
 		public Product FindProductById(int productId)
 		{
 			return productManager.FindProductById(productId);
