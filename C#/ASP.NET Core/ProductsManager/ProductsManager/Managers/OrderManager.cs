@@ -10,5 +10,9 @@ namespace ProductsManager.Managers
 	{
 		public ApplicationState state;
 
+		public OrderManager(ApplicationState state)
+		{
+			this.state = state;
+		}
 	}
 }

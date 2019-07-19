@@ -7,25 +7,27 @@ namespace ProductsManager.Managers
 {
 	public class ShopManager
 	{
-		private OrderItemManager orderManager;
+		private OrderItemManager orderItemManager;
 		private ProductManager productManager;
 		private UserManager userManager;
+		private OrderManager orderManager;
 
 		public List<Product> Products
 		{
 			get { return productManager.Products; }
 		}
-		public List<OrderItem> Orders
+		public List<OrderItem> Cart
 		{
-			get { return orderManager.OrderItems; }
+			get { return orderItemManager.OrderItems; }
 		}
 		public List<User> Users
 		{
 			get { return userManager.Users; }
 		}
 
-		public ShopManager(OrderItemManager orderManager, ProductManager productManager, UserManager userManager)
+		public ShopManager(OrderItemManager orderItemManager, ProductManager productManager, UserManager userManager, OrderManager orderManager)
 		{
+			this.orderItemManager = orderItemManager;
 			this.orderManager = orderManager;
 			this.productManager = productManager;
 			this.userManager = userManager;
