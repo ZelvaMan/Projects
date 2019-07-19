@@ -20,6 +20,8 @@ namespace ProductsManager.Managers
 					if(order.OrderValidity == validity.Valid)
 						orders.Add(order);
 				}
+
+				return orders;
 			}
 		}
 
@@ -27,9 +29,19 @@ namespace ProductsManager.Managers
 		{
 			get { return state.Orders; }
 		}
+
 		public OrderManager(ApplicationState state)
 		{
 			this.state = state;
+			//smazat
+			state.LastOrderId = 1;
+			state.Orders.Clear();
+			for (int i = 0; i < 23; i++)
+			{
+				AddOrder(new List<OrderItem>());
+			}
+			//smazat
+
 		}
 
 		public void AddOrder(List<OrderItem> Cart)

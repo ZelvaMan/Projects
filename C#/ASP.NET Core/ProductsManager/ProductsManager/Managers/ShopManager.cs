@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using ProductsManager.Models;
+using Remotion.Linq.Parsing.Structure.IntermediateModel;
 
 namespace ProductsManager.Managers
 {
@@ -92,6 +93,19 @@ namespace ProductsManager.Managers
 		public Order FindOrderByOrderId(int orderId)
 		{
 			return orderManager.FindOrderByOrderId(orderId);
+		}
+
+		public List<Order> GetFiveOrders(bool withCanceled, int startingPosition)
+		{
+			return (withCanceled ? orderManager.OrdersWithCanceled : orderManager.OrdersWithoutCanceled)
+				.Skip(startingPosition)
+				.Take(5).ToList();
+		}
+
+		public int LastStartingPostion(bool withCanceled)
+		{
+			int count = (withCanceled ? orderManager.OrdersWithCanceled : orderManager.OrdersWithoutCanceled).Count;
+			return count - (count % 5);
 		}
 	}
 }

@@ -90,9 +90,14 @@ namespace ProductsManager.Controlers
 		#region Order History
 
 		[HttpGet("orders")]
-		public ActionResult ShowOrderHistory()
+		public ActionResult ShowOrderHistory([FromQuery]int startingPosition)
 		{
-			ViewBag.orders = manager.Orders;
+			ViewBag.last = manager.LastStartingPostion(false);
+			
+				
+			
+			ViewBag.start = startingPosition;
+			ViewBag.orders = manager.GetFiveOrders(false, startingPosition);
 			return View();
 		}
 
