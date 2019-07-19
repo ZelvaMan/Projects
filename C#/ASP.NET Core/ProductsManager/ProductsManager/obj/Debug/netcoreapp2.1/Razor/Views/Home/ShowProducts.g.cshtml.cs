@@ -140,7 +140,7 @@ using ProductsManager.Models;
             WriteLiteral("\t\t\t\t");
             EndContext();
             BeginContext(1625, 360, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "60c0de7f4b1640ae98fb466e95284ace", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3484cc79215841b4b30fda636a527842", async() => {
                 BeginContext(1707, 41, true);
                 WriteLiteral("\r\n\t\t\t\t\t<button class=\"btn btn-primary\">\r\n");
                 EndContext();
@@ -234,7 +234,7 @@ using ProductsManager.Models;
             WriteLiteral("\t\t</th>\r\n\r\n\t\t<th>\r\n\t\t\t");
             EndContext();
             BeginContext(2094, 156, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "83074c3d1e5141f48292916a46944b1e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "80516e8cd30948bb8e3b369cc5b5723c", async() => {
                 BeginContext(2175, 71, true);
                 WriteLiteral("\r\n\t\t\t\t<button class=\"btn btn-primary\">\r\n\t\t\t\t\tRemove\r\n\t\t\t\t</button>\r\n\t\t\t");
                 EndContext();

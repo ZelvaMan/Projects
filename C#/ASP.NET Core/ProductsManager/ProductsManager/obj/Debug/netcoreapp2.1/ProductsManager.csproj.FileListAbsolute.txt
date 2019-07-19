@@ -22,12 +22,10 @@ C:\Users\jan.rada\Documents\GitHub\MyProjects\C#\ASP.NET Core\ProductsManager\Pr
 C:\Users\jan.rada\Documents\GitHub\MyProjects\C#\ASP.NET Core\ProductsManager\ProductsManager\obj\Debug\netcoreapp2.1\ProductsManager.dll
 C:\Users\jan.rada\Documents\GitHub\MyProjects\C#\ASP.NET Core\ProductsManager\ProductsManager\obj\Debug\netcoreapp2.1\ProductsManager.pdb
 C:\Users\jan.rada\Documents\GitHub\MyProjects\C#\ASP.NET Core\ProductsManager\ProductsManager\obj\Debug\netcoreapp2.1\ProductsManager.csproj.CopyComplete
-C:\Users\jan.rada\Documents\GitHub\MyProjects\C#\ASP.NET Core\ProductsManager\ProductsManager\obj\Debug\netcoreapp2.1\Razor\Views\Home\ShowOrders.g.cshtml.cs
 C:\Users\jan.rada\Documents\GitHub\MyProjects\C#\ASP.NET Core\ProductsManager\ProductsManager\obj\Debug\netcoreapp2.1\Razor\Pages\Users.g.cshtml.cs
 C:\Users\jan.rada\Documents\GitHub\MyProjects\C#\ASP.NET Core\ProductsManager\ProductsManager\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
 C:\Users\jan.rada\Documents\GitHub\MyProjects\C#\ASP.NET Core\ProductsManager\ProductsManager\obj\Debug\netcoreapp2.1\Razor\Pages\_ViewImports.g.cshtml.cs
 C:\Users\jan.rada\Documents\GitHub\MyProjects\C#\ASP.NET Core\ProductsManager\ProductsManager\obj\Debug\netcoreapp2.1\Razor\Views\Home\ShowProducts.g.cshtml.cs
-C:\Users\jan.rada\Documents\GitHub\MyProjects\C#\ASP.NET Core\ProductsManager\ProductsManager\obj\Debug\netcoreapp2.1\Razor\Views\Home\ShowUsers.g.cshtml.cs
 C:\Dokumenty\GIT\Projects\C#\ASP.NET Core\ProductsManager\ProductsManager\bin\Debug\netcoreapp2.1\ProductsManager.deps.json
 C:\Dokumenty\GIT\Projects\C#\ASP.NET Core\ProductsManager\ProductsManager\bin\Debug\netcoreapp2.1\ProductsManager.runtimeconfig.json
 C:\Dokumenty\GIT\Projects\C#\ASP.NET Core\ProductsManager\ProductsManager\bin\Debug\netcoreapp2.1\ProductsManager.runtimeconfig.dev.json
@@ -58,3 +56,6 @@ C:\Dokumenty\GIT\Projects\C#\ASP.NET Core\ProductsManager\ProductsManager\obj\De
 C:\Dokumenty\GIT\Projects\C#\ASP.NET Core\ProductsManager\ProductsManager\obj\Debug\netcoreapp2.1\ProductsManager.dll
 C:\Dokumenty\GIT\Projects\C#\ASP.NET Core\ProductsManager\ProductsManager\obj\Debug\netcoreapp2.1\ProductsManager.pdb
 C:\Dokumenty\GIT\Projects\C#\ASP.NET Core\ProductsManager\ProductsManager\obj\Debug\netcoreapp2.1\ProductsManager.csproj.CopyComplete
+C:\Users\jan.rada\Documents\GitHub\MyProjects\C#\ASP.NET Core\ProductsManager\ProductsManager\obj\Debug\netcoreapp2.1\Razor\Views\Home\ShowOrderItems.g.cshtml.cs
+C:\Users\jan.rada\Documents\GitHub\MyProjects\C#\ASP.NET Core\ProductsManager\ProductsManager\obj\Debug\netcoreapp2.1\Razor\Views\Home\ShowOrderHistory.g.cshtml.cs
+C:\Users\jan.rada\Documents\GitHub\MyProjects\C#\ASP.NET Core\ProductsManager\ProductsManager\obj\Debug\netcoreapp2.1\Razor\Views\Home\ShowOrderInfo.g.cshtml.cs

@@ -13,9 +13,12 @@ namespace ProductsManager.Models
 
 		public List<User> Users { get; set; } = new List<User>();
 
+		public List<Order> Orders { get; set;  } = new List<Order>();
+
 		public int LastProductId { get; set; } = 1;
-		public int LastOrderId { get; set; } = 1;
+		public int LastOrderItemId { get; set; } = 1;
 		public int LastUserId { get; set; } = 1;
+		public int LastOrderId { get; set; } = 1;
 
 		public ApplicationState()
 		{

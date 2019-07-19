@@ -1,0 +1,33 @@
+﻿@using ProductsManager.Models
+
+@{
+    ViewData["Title"] = "Order History";
+	Layout = "_Layout";
+}
+
+<h2>OrdersWithoutCanceled History</h2>
+<table  class="table table-striped table-sm" >
+	<thead>
+	<tr>
+		<th>Order Id</th>
+		<th> number of products</th>
+		<th> more info</th>
+	</tr>
+	</thead>
+	<tbody>
+	@foreach (Order o in ViewBag.orders)
+	{
+		<tr>
+			<td>@o.orderId</td>
+			<td>@o.NumberOfProducts</td>
+			<td>
+				<a asp-controller="Home" asp-action="ShowOrderInfo" asp-route-orderId="@o.orderId" ><button class="btn btn-primary">More info</button></a>
+			</td>
+		</tr>
+	}
+	</tbody>
+	<form>
+		<input type="checkbox" onChange="this.form.submit()" name="ShowCanceled"/>
+	</form>
+</table>
+

@@ -32,6 +32,7 @@ namespace ProductsManager.Controlers
 			{
 				ViewBag.data = products;
 			}
+
 			ViewBag.manager = manager;
 			return View();
 		}
@@ -39,7 +40,6 @@ namespace ProductsManager.Controlers
 		[HttpGet("Product/{productId}")]
 		public ActionResult ShowBuyProduct(int productId)
 		{
-
 			ViewBag.Product = manager.FindProductById(productId);
 			return View();
 		}
@@ -62,18 +62,17 @@ namespace ProductsManager.Controlers
 		{
 			manager.AddToCart(productId, quantity);
 			return RedirectToAction(nameof(ShowProducts));
-
 		}
 
 		[HttpGet("cart/delete/{id}")]
 		public ActionResult DeleteOrder(int id)
 		{
 			manager.DeleteOrder(id);
-			return RedirectToAction(nameof(ShowOrders));
+			return RedirectToAction(nameof(ShowOrderItems));
 		}
 
 		[HttpGet("cart")]
-		public ActionResult ShowOrders()
+		public ActionResult ShowOrderItems()
 		{
 			ViewBag.Orders = manager.Cart;
 			return View();
@@ -85,13 +84,24 @@ namespace ProductsManager.Controlers
 			manager.Buy();
 			return RedirectToAction(nameof(ShowProducts));
 		}
-			#endregion
 
-		[HttpGet("users")]
-		public ActionResult ShowUsers()
+		#endregion
+
+		#region Order History
+
+		[HttpGet("orders")]
+		public ActionResult ShowOrderHistory()
 		{
-			ViewBag.Users = manager.Users;
+			ViewBag.orders = manager.Orders;
 			return View();
 		}
+
+		[HttpGet("orders/info/{orderId}")]
+		public ActionResult ShowOrderInfo(int orderId)
+		{
+			ViewBag.order = manager.FindOrderByOrderId(orderId);
+			return View();
+		}
+		#endregion
 	}
 }
