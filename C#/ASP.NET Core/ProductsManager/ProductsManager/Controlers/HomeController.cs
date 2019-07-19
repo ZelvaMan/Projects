@@ -75,7 +75,7 @@ namespace ProductsManager.Controlers
 		[HttpGet("cart")]
 		public ActionResult ShowOrders()
 		{
-			ViewBag.Orders = manager.Orders;
+			ViewBag.Orders = manager.Cart;
 			return View();
 		}
 

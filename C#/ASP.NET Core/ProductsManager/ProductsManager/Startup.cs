@@ -23,6 +23,7 @@ namespace ProductsManager
 			services.AddScoped<ProductManager>();
 			services.AddScoped<UserManager>();
 			services.AddScoped<ShopManager>();
+			services.AddScoped<OrderManager>();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
