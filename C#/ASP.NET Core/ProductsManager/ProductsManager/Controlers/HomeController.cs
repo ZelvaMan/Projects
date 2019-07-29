@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using ProductsManager.Managers;
 using ProductsManager.Models;
 
@@ -90,22 +91,33 @@ namespace ProductsManager.Controlers
 		#region Order History
 
 		[HttpGet("orders")]
-		public ActionResult ShowOrderHistory([FromQuery]int startingPosition)
+		public ActionResult ShowOrderHistory([FromQuery]int startingPosition, [FromQuery] bool canceled)
 		{
-			ViewBag.last = manager.LastStartingPostion(false);
-			
+			ViewBag.last = manager.LastStartingPostion(canceled);
+			ViewBag.canceled = canceled;
 				
 			
 			ViewBag.start = startingPosition;
-			ViewBag.orders = manager.GetFiveOrders(false, startingPosition);
+			ViewBag.orders = manager.GetFiveOrders(canceled, startingPosition);
 			return View();
 		}
+
 
 		[HttpGet("orders/info/{orderId}")]
 		public ActionResult ShowOrderInfo(int orderId)
 		{
 			ViewBag.order = manager.FindOrderByOrderId(orderId);
 			return View();
+		}
+
+		[HttpGet("orders/cancel/{orderId}")]
+		public ActionResult CancelOrder(int orderId)
+		{
+			manager.CancelOrder(orderId);
+			return RedirectToAction(nameof(ShowOrderHistory), new RouteValueDictionary
+			{
+				{"startingPosition", "0"}, {"canceled", false}
+			});
 		}
 		#endregion
 	}

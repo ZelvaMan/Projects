@@ -34,11 +34,14 @@ namespace ProductsManager.Managers
 		{
 			this.state = state;
 			//smazat
-			state.LastOrderId = 1;
-			state.Orders.Clear();
-			for (int i = 0; i < 23; i++)
+			if (state.Orders.Count == 0)
 			{
-				AddOrder(new List<OrderItem>());
+				state.LastOrderId = 1;
+				state.Orders.Clear();
+				for (int i = 0; i < 23; i++)
+				{
+					AddOrder(new List<OrderItem>());
+				}
 			}
 			//smazat
 
@@ -66,7 +69,8 @@ namespace ProductsManager.Managers
 
 		public void CancelOrder(int orderId)
 		{
-			OrdersWithCanceled.Find((order => order.orderId == orderId)).OrderValidity = validity.Canceled;
+			Order ord = OrdersWithCanceled.Find((order => order.orderId == orderId));
+			ord.OrderValidity = validity.Canceled;
 		}
 	}
 }

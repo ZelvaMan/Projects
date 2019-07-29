@@ -28,7 +28,7 @@ namespace ProductsManager.Managers
 
 		public List<Order> Orders
 		{
-			get { return orderManager.OrdersWithoutCanceled; }
+			get { return orderManager.OrdersWithCanceled; }
 		}
 
 
@@ -105,7 +105,15 @@ namespace ProductsManager.Managers
 		public int LastStartingPostion(bool withCanceled)
 		{
 			int count = (withCanceled ? orderManager.OrdersWithCanceled : orderManager.OrdersWithoutCanceled).Count;
-			return count - (count % 5);
+			int I = count % 5;
+			if (I == 0)
+				return count - 5;
+			return count - I;
+		}
+
+		public void CancelOrder(int orderId)
+		{
+			orderManager.CancelOrder(orderId);
 		}
 	}
 }
