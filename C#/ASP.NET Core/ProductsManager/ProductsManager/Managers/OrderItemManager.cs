@@ -36,7 +36,7 @@ namespace ProductsManager.Managers
 
 		public void RemoveAll()
 		{
-			state.Cart.Clear();
+			state.Cart = new List<OrderItem>();
 		}
 		#endregion
 

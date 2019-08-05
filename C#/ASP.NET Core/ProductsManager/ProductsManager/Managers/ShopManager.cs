@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using ProductsManager.Models;
+using Remotion.Linq.Parsing.Structure.IntermediateModel;
 
 namespace ProductsManager.Managers
 {
@@ -25,6 +26,12 @@ namespace ProductsManager.Managers
 			get { return userManager.Users; }
 		}
 
+		public List<Order> Orders
+		{
+			get { return orderManager.OrdersWithCanceled; }
+		}
+
+
 		public ShopManager(OrderItemManager orderItemManager, ProductManager productManager, UserManager userManager, OrderManager orderManager)
 		{
 			this.orderItemManager = orderItemManager;
@@ -43,11 +50,11 @@ namespace ProductsManager.Managers
 				if (product.ProductAvailability == Availability.Avalible)
 				{
 					//productManager.ChangeStock(productId, -quantity);
-					orderManager.AddOrderItem(productId, product.Price, quantity);
+					orderItemManager.AddOrderItem(productId, product.Price, quantity);
 					productManager.SetAvailability(Availability.InCart,productId);
 				}
 
-				orderManager.changeQuantity(productId, quantity);
+				orderItemManager.changeQuantity(productId, quantity);
 			}
 			else
 			{
@@ -57,13 +64,15 @@ namespace ProductsManager.Managers
 
 		public void Buy()
 		{
-			foreach (OrderItem ord in orderManager.OrderItems)
+			foreach (OrderItem ord in orderItemManager.OrderItems)
 			{
 				productManager.ChangeStock(ord.ProductID, -ord.Quantity);
 				
 			}
-			orderManager.RemoveAll();
+			orderManager.AddOrder(orderItemManager.OrderItems);
+			orderItemManager.RemoveAll();
 		}
+
 		public Product FindProductById(int productId)
 		{
 			return productManager.FindProductById(productId);
@@ -71,15 +80,40 @@ namespace ProductsManager.Managers
 
 		public void DeleteOrder(int orderId)
 		{
-			OrderItem orderToDelete = orderManager.FindOrderItemByOrderId(orderId);
-			orderManager.RemoveOrderItem(orderToDelete);
+			OrderItem orderToDelete = orderItemManager.FindOrderItemByOrderId(orderId);
+			orderItemManager.RemoveOrderItem(orderToDelete);
 		}
 
 		public void DeleteProduct(int productId)
 		{
 			productManager.RemoveProduct(productId);
-			orderManager.RemoveOrderItem(orderManager.FindOrderItemByProductId(productId));
+			orderItemManager.RemoveOrderItem(orderItemManager.FindOrderItemByProductId(productId));
 		}
 
+		public Order FindOrderByOrderId(int orderId)
+		{
+			return orderManager.FindOrderByOrderId(orderId);
+		}
+
+		public List<Order> GetFiveOrders(bool withCanceled, int startingPosition)
+		{
+			return (withCanceled ? orderManager.OrdersWithCanceled : orderManager.OrdersWithoutCanceled)
+				.Skip(startingPosition)
+				.Take(5).ToList();
+		}
+
+		public int LastStartingPostion(bool withCanceled)
+		{
+			int count = (withCanceled ? orderManager.OrdersWithCanceled : orderManager.OrdersWithoutCanceled).Count;
+			int I = count % 5;
+			if (I == 0)
+				return count - 5;
+			return count - I;
+		}
+
+		public void CancelOrder(int orderId)
+		{
+			orderManager.CancelOrder(orderId);
+		}
 	}
 }

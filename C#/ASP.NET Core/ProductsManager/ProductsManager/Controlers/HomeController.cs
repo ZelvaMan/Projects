@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using ProductsManager.Managers;
 using ProductsManager.Models;
 
@@ -32,6 +33,7 @@ namespace ProductsManager.Controlers
 			{
 				ViewBag.data = products;
 			}
+
 			ViewBag.manager = manager;
 			return View();
 		}
@@ -39,7 +41,6 @@ namespace ProductsManager.Controlers
 		[HttpGet("Product/{productId}")]
 		public ActionResult ShowBuyProduct(int productId)
 		{
-
 			ViewBag.Product = manager.FindProductById(productId);
 			return View();
 		}
@@ -62,18 +63,17 @@ namespace ProductsManager.Controlers
 		{
 			manager.AddToCart(productId, quantity);
 			return RedirectToAction(nameof(ShowProducts));
-
 		}
 
 		[HttpGet("cart/delete/{id}")]
 		public ActionResult DeleteOrder(int id)
 		{
 			manager.DeleteOrder(id);
-			return RedirectToAction(nameof(ShowOrders));
+			return RedirectToAction(nameof(ShowOrderItems));
 		}
 
 		[HttpGet("cart")]
-		public ActionResult ShowOrders()
+		public ActionResult ShowOrderItems()
 		{
 			ViewBag.Orders = manager.Cart;
 			return View();
@@ -85,13 +85,40 @@ namespace ProductsManager.Controlers
 			manager.Buy();
 			return RedirectToAction(nameof(ShowProducts));
 		}
-			#endregion
 
-		[HttpGet("users")]
-		public ActionResult ShowUsers()
+		#endregion
+
+		#region Order History
+
+		[HttpGet("orders")]
+		public ActionResult ShowOrderHistory([FromQuery]int startingPosition, [FromQuery] bool canceled)
 		{
-			ViewBag.Users = manager.Users;
+			ViewBag.last = manager.LastStartingPostion(canceled);
+			ViewBag.canceled = canceled;
+				
+			
+			ViewBag.start = startingPosition;
+			ViewBag.orders = manager.GetFiveOrders(canceled, startingPosition);
 			return View();
 		}
+
+
+		[HttpGet("orders/info/{orderId}")]
+		public ActionResult ShowOrderInfo(int orderId)
+		{
+			ViewBag.order = manager.FindOrderByOrderId(orderId);
+			return View();
+		}
+
+		[HttpGet("orders/cancel/{orderId}")]
+		public ActionResult CancelOrder(int orderId)
+		{
+			manager.CancelOrder(orderId);
+			return RedirectToAction(nameof(ShowOrderHistory), new RouteValueDictionary
+			{
+				{"startingPosition", "0"}, {"canceled", false}
+			});
+		}
+		#endregion
 	}
 }
