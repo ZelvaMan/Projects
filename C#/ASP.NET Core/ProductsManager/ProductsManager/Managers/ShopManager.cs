@@ -65,6 +65,8 @@ namespace ProductsManager.Managers
 
 		public void Buy()
 		{
+			if(orderItemManager.OrderItems.Count == 0)
+				return;
 			foreach (OrderItem ord in orderItemManager.OrderItems)
 			{
 				productManager.ChangeStock(ord.ProductID, -ord.Quantity);
