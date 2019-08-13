@@ -15,6 +15,7 @@ namespace ProductsManager.Managers
 			get
 			{
 				List<Order> orders = new List<Order>();
+				//foreach all orders, if isn't canceled, add to list which then return 
 				foreach (Order order in OrdersWithCanceled)
 				{
 					if(order.OrderValidity == validity.Valid)
@@ -29,7 +30,10 @@ namespace ProductsManager.Managers
 		{
 			get { return state.Orders; }
 		}
-
+		/// <summary>
+		/// inicializate orderManager
+		/// </summary>
+		/// <param name="state"></param>
 		public OrderManager(ApplicationState state)
 		{
 			this.state = state;
@@ -67,6 +71,10 @@ namespace ProductsManager.Managers
 			return state.Orders.Find((order => order.orderId == orderId));
 		}
 
+		/// <summary>
+		/// set validity of order to canceled
+		/// </summary>
+		/// <param name="orderId"></param>
 		public void CancelOrder(int orderId)
 		{
 			Order ord = OrdersWithCanceled.Find((order => order.orderId == orderId));

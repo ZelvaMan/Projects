@@ -19,7 +19,7 @@ namespace ProductsManager.Models
 		public int LastOrderItemId { get; set; } = 1;
 		public int LastUserId { get; set; } = 1;
 		public int LastOrderId { get; set; } = 1;
-
+		public int OrdersPerPage { get; set; } = 5;
 		public ApplicationState()
 		{
 		}

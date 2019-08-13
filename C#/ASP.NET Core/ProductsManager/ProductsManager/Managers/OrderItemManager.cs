@@ -21,11 +21,19 @@ namespace ProductsManager.Managers
 
 		#region Removing
 
+		/// <summary>
+		/// remove order Item
+		/// </summary>
+		/// <param name="order"></param>
 		public void RemoveOrderItem(OrderItem order)
 		{
 			state.Cart.Remove(order);
 		}
 
+		/// <summary>
+		/// remove multiple order items
+		/// </summary>
+		/// <param name="orders"></param>
 		public void RemoveOrderItems(List<OrderItem> orders)
 		{
 			foreach (var order in orders)
@@ -34,14 +42,24 @@ namespace ProductsManager.Managers
 			}
 		}
 
+		/// <summary>
+		/// clear cart
+		/// </summary>
 		public void RemoveAll()
 		{
 			state.Cart = new List<OrderItem>();
 		}
 		#endregion
 
+		//finding order items
 		#region Finding
 
+
+		/// <summary>
+		/// find order item with product id
+		/// </summary>
+		/// <param name="productId">id of product</param>
+		/// <returns></returns>
 		public OrderItem FindOrderItemByProductId(int productId)
 		{
 			try
@@ -54,6 +72,11 @@ namespace ProductsManager.Managers
 			}
 		}
 
+		/// <summary>
+		/// find order item  with order Id
+		/// </summary>
+		/// <param name="OrderId"></param>
+		/// <returns></returns>
 		public OrderItem FindOrderItemByOrderId(int OrderId)
 		{
 			return state.Cart.Find((order => order.OrderId == OrderId));
@@ -61,14 +84,26 @@ namespace ProductsManager.Managers
 
 		#endregion
 
+		/// <summary>
+		/// ad order item to cart, count total price
+		/// </summary>
+		/// <param name="productId"></param>
+		/// <param name="price"></param>
+		/// <param name="quantity"></param>
 		public void AddOrderItem( int productId, int price, int quantity)
 		{
 			int id = state.LastProductId++;
 			state.Cart.Add(new OrderItem() { OrderId = id, TotalPrice = price * quantity,  ProductID = productId, Quantity = quantity});
 		}
 
+		/// <summary>
+		/// change hoe many pieces of that product you have  in cart
+		/// </summary>
+		/// <param name="productId"></param>
+		/// <param name="newQuantity"></param>
 		public void changeQuantity(int productId, int newQuantity)
 		{
+
 		OrderItem ord=	FindOrderItemByProductId(productId);
 		ord.Quantity = newQuantity;
 		}

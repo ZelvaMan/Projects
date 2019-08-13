@@ -12,7 +12,7 @@ namespace ProductsManager.Managers
 		private ProductManager productManager;
 		private UserManager userManager;
 		private OrderManager orderManager;
-
+		private ApplicationState state;
 		public List<Product> Products
 		{
 			get { return productManager.Products; }
@@ -32,12 +32,13 @@ namespace ProductsManager.Managers
 		}
 
 
-		public ShopManager(OrderItemManager orderItemManager, ProductManager productManager, UserManager userManager, OrderManager orderManager)
+		public ShopManager(OrderItemManager orderItemManager, ProductManager productManager, UserManager userManager, OrderManager orderManager, ApplicationState state)
 		{
 			this.orderItemManager = orderItemManager;
 			this.orderManager = orderManager;
 			this.productManager = productManager;
 			this.userManager = userManager;
+			this.state = state;
 		}
 
 
@@ -102,12 +103,14 @@ namespace ProductsManager.Managers
 				.Take(5).ToList();
 		}
 
+
 		public int LastStartingPostion(bool withCanceled)
 		{
+			int perPage = state.OrdersPerPage;
 			int count = (withCanceled ? orderManager.OrdersWithCanceled : orderManager.OrdersWithoutCanceled).Count;
-			int I = count % 5;
+			int I = count % perPage;
 			if (I == 0)
-				return count - 5;
+				return count - perPage;
 			return count - I;
 		}
 

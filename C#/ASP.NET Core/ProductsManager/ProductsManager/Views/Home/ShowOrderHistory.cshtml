@@ -31,7 +31,10 @@
 					<a asp-controller="Home" asp-action="ShowOrderInfo" asp-route-orderId="@o.orderId"><button class="btn btn-primary">More info</button></a>
 				</td>
 				<td>
-					<a asp-controller="Home" asp-action="CancelOrder" asp-route-orderId="@o.orderId"><button class="btn btn-primary">Cancel</button></a>
+					@if (o.OrderValidity == validity.Valid)
+					{
+						<a asp-controller="Home" asp-action="CancelOrder" asp-route-orderId="@o.orderId" asp-route-startingPosition="@startposition" asp-route-canceled="@ViewBag.canceled"><button class="btn btn-primary">Cancel</button></a>
+					}
 				</td>
 			</tr>
 		}
@@ -65,21 +68,22 @@
 		</a>
 	</div>
 	<div class="col-sm-3">
-		<input type="checkbox" readonly="readonly" id="CBId" checked="@ViewBag.canceled" >Show Canceled Orders</input>
+		<input type="checkbox" readonly="readonly" id="CBId" checked="@ViewBag.canceled">Show Canceled Orders</input>
 
 	</div>
 </div>
 @section scripts
-{
-<script>
+	{
+	<script>
+
 		$(function() {
 
 			// jQuery methods go here...
 
 			$('#CBId').change(function() {
-				window.location.href = "@Url.Action("ShowOrderHistory",data)"
+				window.location.href = "@Html.Raw(Url.Action("ShowOrderHistory",data))"
 			});
 
 		});
-</script>
+	</script>
 }
