@@ -60,3 +60,4 @@ C:\Users\jan.rada\Documents\GitHub\MyProjects\C#\ASP.NET Core\ProductsManager\Pr
 C:\Users\jan.rada\Documents\GitHub\MyProjects\C#\ASP.NET Core\ProductsManager\ProductsManager\obj\Debug\netcoreapp2.1\Razor\Views\Home\ShowOrderHistory.g.cshtml.cs
 C:\Users\jan.rada\Documents\GitHub\MyProjects\C#\ASP.NET Core\ProductsManager\ProductsManager\obj\Debug\netcoreapp2.1\Razor\Views\Home\ShowOrderInfo.g.cshtml.cs
 C:\Users\jan.rada\Documents\GitHub\MyProjects\C#\ASP.NET Core\ProductsManager\ProductsManager\bin\Debug\netcoreapp2.1\Images\TurtleIcon.png
+C:\Users\jan.rada\Documents\GitHub\MyProjects\C#\ASP.NET Core\ProductsManager\ProductsManager\obj\Debug\netcoreapp2.1\Razor\Views\Home\ShowAddForm.g.cshtml.cs

@@ -116,9 +116,23 @@ namespace ProductsManager.Managers
 			return count - I;
 		}
 
+		/// <summary>
+		/// cancel order (set ist <see cref="validity"/> cancelled />
+		/// </summary>
+		/// <param name="orderId"></param>
 		public void CancelOrder(int orderId)
 		{
 			orderManager.CancelOrder(orderId);
 		}
+
+		/// <summary>
+		/// adds new product with data from addForm
+		/// </summary>
+		/// <param name="model"></param>
+		public void AddProduct(ProductFormModel model)
+		{
+			productManager.AddProduct(model.Name,model.Price, model.InStock);
+		}
+
 	}
 }

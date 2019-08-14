@@ -104,7 +104,7 @@ using ProductsManager.Models;
             WriteLiteral("\r\n\t\t</div>\r\n\t</div>\r\n\r\n\t<div class=\"row\">\r\n\t\t");
             EndContext();
             BeginContext(768, 292, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6b2a6b91df3b44ee8913ae83b9ca2c8b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "81ddc2bfb4414c48bc2872e54dae051d", async() => {
                 BeginContext(867, 108, true);
                 WriteLiteral("\r\n\t\t\t<label>Quantity</label>\r\n\t\t\t\t<input placeholder=\" \" id=\"Quantity\" type=\"number\" name=\"Quantity\" min=\"1\"");
                 EndContext();

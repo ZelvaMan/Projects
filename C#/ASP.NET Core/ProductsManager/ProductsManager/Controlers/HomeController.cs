@@ -54,6 +54,23 @@ namespace ProductsManager.Controlers
 			return RedirectToAction(nameof(ShowProducts));
 		}
 
+		[HttpGet("product/add")]
+		public ActionResult ShowProductAddForm()
+		{
+			return View("ShowAddForm");
+		}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="data"> data from form</param>
+		/// <returns></returns>
+		[HttpPost("product/add")]
+		public ActionResult AddProduct(ProductFormModel data)
+		{
+			manager.AddProduct(data);
+			return RedirectToAction(nameof(ShowProducts));
+		}
 		#endregion
 
 		#region Cart
