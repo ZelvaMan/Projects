@@ -15,6 +15,9 @@ namespace ProductsManager.Managers
 			Load("");
 		}
 
+		/// <summary>
+		/// return products stored at appstate
+		/// </summary>
 		public List<Product> Products
 		{
 			get
@@ -32,13 +35,13 @@ namespace ProductsManager.Managers
 			//load products from JSON file
 			if (state.Products.Count == 0)
 			{
-				
-			
 
-			for (int i = 1; i < 25; i++)
-			{
-				AddProduct("product" + i.ToString("D2"),i*25,i*2);
-			}
+				//delete this
+				for (int i = 1; i < 25; i++)
+				{
+					AddProduct("product" + i.ToString("D2"), i * 25, i * 2);
+				}
+				//delete this
 			}
 			Order();
 		}
@@ -51,6 +54,9 @@ namespace ProductsManager.Managers
 			state.Products = state.Products.OrderBy((product => product.ID)).ToList();
 		}
 
+		/// <summary>
+		///add product to <see cref="Products"/>
+		/// /// </summary>
 		public void AddProduct(string name, int price, int inStock)
 		{
 			int id = state.LastProductId++;
@@ -58,6 +64,10 @@ namespace ProductsManager.Managers
 			Order();
 		}
 
+		/// <summary>
+		/// remove product 
+		/// </summary>
+		/// <param name="productId">Id of product</param>
 		public void RemoveProduct(int productId)
 		{
 			state.Products.Remove(FindProductById(productId));
@@ -82,7 +92,7 @@ namespace ProductsManager.Managers
 			if (pr.InStock <= 0)
 			{
 				pr.InStock = 0;
-				SetAvailability(Availability.UnAvailable,productId);
+				SetAvailability(Availability.UnAvailable, productId);
 			}
 			else
 				SetAvailability(Availability.Avalible, productId);

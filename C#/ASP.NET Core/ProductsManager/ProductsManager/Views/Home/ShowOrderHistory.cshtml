@@ -4,10 +4,11 @@
 @{
 	ViewData["Title"] = "Order History";
 	Layout = "_Layout";
+	bool canceled = ViewBag.canceled;
 	int startposition = ViewBag.start;
 	RouteValueDictionary data = new RouteValueDictionary {
 {"startingPosition",startposition.ToString() }
-,{ "canceled",!ViewBag.canceled}
+,{ "canceled",!canceled }
 };
 }
 
@@ -77,7 +78,7 @@
 			// jQuery methods go here...
 
 			$('#CBId').change(function() {
-				window.location.href = "@Url.Action("ShowOrderHistory",data)"
+				window.location.href = "@Url.Action("ShowOrderHistory",data)";
 			});
 
 		});

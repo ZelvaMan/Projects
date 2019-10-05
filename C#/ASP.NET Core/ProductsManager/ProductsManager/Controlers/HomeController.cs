@@ -93,12 +93,16 @@ namespace ProductsManager.Controlers
 		[HttpGet("orders")]
 		public ActionResult ShowOrderHistory([FromQuery]int startingPosition, [FromQuery] bool canceled)
 		{
-			ViewBag.last = manager.LastStartingPostion(canceled);
-			ViewBag.canceled = canceled;
+			bool canceledBool;
+			if (!bool.TryParse(canceled.ToString(), out canceledBool))
+				canceledBool = false;
+
+			ViewBag.last = manager.LastStartingPostion(canceledBool);
+			ViewBag.canceled = canceledBool;
 				
 			
 			ViewBag.start = startingPosition;
-			ViewBag.orders = manager.GetFiveOrders(canceled, startingPosition);
+			ViewBag.orders = manager.GetFiveOrders(canceledBool, startingPosition);
 			return View();
 		}
 
@@ -111,7 +115,7 @@ namespace ProductsManager.Controlers
 		}
 
 		[HttpGet("orders/cancel/{orderId}")]
-		public ActionResult CancelOrder(int orderId)
+		public ActionResult CancelOrder(int orderId) 
 		{
 			manager.CancelOrder(orderId);
 			return RedirectToAction(nameof(ShowOrderHistory), new RouteValueDictionary
