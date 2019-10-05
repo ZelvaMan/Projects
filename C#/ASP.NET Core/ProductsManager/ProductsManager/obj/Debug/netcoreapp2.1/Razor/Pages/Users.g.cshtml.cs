@@ -50,7 +50,11 @@ namespace AspNetCore
             WriteLiteral("\r\n<h2></h2>\r\n");
             EndContext();
             BeginContext(102, 27, false);
+<<<<<<< HEAD
             __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8c69b075cc6f41c380d42cccf053bd25", async() => {
+=======
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fa05f3feceff42beb9ea956e870216d4", async() => {
+>>>>>>> 8c4f9ee413fd4c009298c7b9ba8d3c73afc1dd3a
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper>();

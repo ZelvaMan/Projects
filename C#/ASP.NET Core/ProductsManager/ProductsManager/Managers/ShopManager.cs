@@ -12,7 +12,7 @@ namespace ProductsManager.Managers
 		private ProductManager productManager;
 		private UserManager userManager;
 		private OrderManager orderManager;
-
+		private ApplicationState state;
 		public List<Product> Products
 		{
 			get { return productManager.Products; }
@@ -32,12 +32,17 @@ namespace ProductsManager.Managers
 		}
 
 
+<<<<<<< HEAD
 		public ShopManager(OrderItemManager orderItemManager, ProductManager productManager, UserManager userManager, OrderManager orderManager)
+=======
+		public ShopManager(OrderItemManager orderItemManager, ProductManager productManager, UserManager userManager, OrderManager orderManager, ApplicationState state)
+>>>>>>> 8c4f9ee413fd4c009298c7b9ba8d3c73afc1dd3a
 		{
 			this.orderItemManager = orderItemManager;
 			this.orderManager = orderManager;
 			this.productManager = productManager;
 			this.userManager = userManager;
+			this.state = state;
 		}
 
 
@@ -64,6 +69,11 @@ namespace ProductsManager.Managers
 
 		public void Buy()
 		{
+<<<<<<< HEAD
+=======
+			if(orderItemManager.OrderItems.Count == 0)
+				return;
+>>>>>>> 8c4f9ee413fd4c009298c7b9ba8d3c73afc1dd3a
 			foreach (OrderItem ord in orderItemManager.OrderItems)
 			{
 				productManager.ChangeStock(ord.ProductID, -ord.Quantity);
@@ -93,6 +103,45 @@ namespace ProductsManager.Managers
 		public Order FindOrderByOrderId(int orderId)
 		{
 			return orderManager.FindOrderByOrderId(orderId);
+<<<<<<< HEAD
+=======
+		}
+
+		public List<Order> GetFiveOrders(bool withCanceled, int startingPosition)
+		{
+			return (withCanceled ? orderManager.OrdersWithCanceled : orderManager.OrdersWithoutCanceled)
+				.Skip(startingPosition)
+				.Take(5).ToList();
+		}
+
+
+		public int LastStartingPostion(bool withCanceled)
+		{
+			int perPage = state.OrdersPerPage;
+			int count = (withCanceled ? orderManager.OrdersWithCanceled : orderManager.OrdersWithoutCanceled).Count;
+			int I = count % perPage;
+			if (I == 0)
+				return count - perPage;
+			return count - I;
+		}
+
+		/// <summary>
+		/// cancel order (set ist <see cref="validity"/> cancelled />
+		/// </summary>
+		/// <param name="orderId"></param>
+		public void CancelOrder(int orderId)
+		{
+			orderManager.CancelOrder(orderId);
+		}
+
+		/// <summary>
+		/// adds new product with data from addForm
+		/// </summary>
+		/// <param name="model"></param>
+		public void AddProduct(ProductFormModel model)
+		{
+			productManager.AddProduct(model.Name,model.Price, model.InStock);
+>>>>>>> 8c4f9ee413fd4c009298c7b9ba8d3c73afc1dd3a
 		}
 
 		public List<Order> GetFiveOrders(bool withCanceled, int startingPosition)

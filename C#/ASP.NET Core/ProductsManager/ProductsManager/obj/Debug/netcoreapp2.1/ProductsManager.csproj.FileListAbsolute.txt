@@ -59,6 +59,11 @@ C:\Dokumenty\GIT\Projects\C#\ASP.NET Core\ProductsManager\ProductsManager\obj\De
 C:\Users\jan.rada\Documents\GitHub\MyProjects\C#\ASP.NET Core\ProductsManager\ProductsManager\obj\Debug\netcoreapp2.1\Razor\Views\Home\ShowOrderItems.g.cshtml.cs
 C:\Users\jan.rada\Documents\GitHub\MyProjects\C#\ASP.NET Core\ProductsManager\ProductsManager\obj\Debug\netcoreapp2.1\Razor\Views\Home\ShowOrderHistory.g.cshtml.cs
 C:\Users\jan.rada\Documents\GitHub\MyProjects\C#\ASP.NET Core\ProductsManager\ProductsManager\obj\Debug\netcoreapp2.1\Razor\Views\Home\ShowOrderInfo.g.cshtml.cs
+<<<<<<< HEAD
 C:\Dokumenty\GIT\Projects\C#\ASP.NET Core\ProductsManager\ProductsManager\obj\Debug\netcoreapp2.1\Razor\Views\Home\ShowOrderHistory.g.cshtml.cs
 C:\Dokumenty\GIT\Projects\C#\ASP.NET Core\ProductsManager\ProductsManager\obj\Debug\netcoreapp2.1\Razor\Views\Home\ShowOrderInfo.g.cshtml.cs
 C:\Dokumenty\GIT\Projects\C#\ASP.NET Core\ProductsManager\ProductsManager\obj\Debug\netcoreapp2.1\Razor\Views\Home\ShowOrderItems.g.cshtml.cs
+=======
+C:\Users\jan.rada\Documents\GitHub\MyProjects\C#\ASP.NET Core\ProductsManager\ProductsManager\bin\Debug\netcoreapp2.1\Images\TurtleIcon.png
+C:\Users\jan.rada\Documents\GitHub\MyProjects\C#\ASP.NET Core\ProductsManager\ProductsManager\obj\Debug\netcoreapp2.1\Razor\Views\Home\ShowAddForm.g.cshtml.cs
+>>>>>>> 8c4f9ee413fd4c009298c7b9ba8d3c73afc1dd3a
