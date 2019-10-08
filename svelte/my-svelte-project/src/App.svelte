@@ -24,14 +24,14 @@
 
   function Sort(event) {
 		let parms = event.detail;
-		alert(parms.name);
-		let sorted = persons
+		let sorted = persons;
 		sorted = sorted.includes(SortByName(parms.name));
-		
+		alert ( sorted.length);
 		sorted = sorted.includes(SortByState(parms.state));
 		sorted = sorted.includes(SortByCity(parms.city));
-	SortedPersons = sorted;
-  }
+		SortedPersons = sorted;
+	}
+	
 
   function SortByName(item , name) {
       return item.nickname.includes(name);
@@ -48,6 +48,7 @@
 	function SortByHobbies(item, hobbies) {
 
 	}
+
 </script>
 
 <style>
