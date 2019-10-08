@@ -1,54 +1,86 @@
 <script>
   import Card from "./Card.svelte";
   import SortForm from "./SortForm.svelte";
-
+  import people from "data/people.js"
   export let name = "hroch";
   let currentTime = new Date();
 
-  let persons = [
-		{ imageLink: "https://i.pravatar.cc/400?img=1", nickname: "Nick" , 
-		state:"Offline", city:"Ostrava"},
-		{ imageLink: "https://i.pravatar.cc/400?img=2", nickname: "Nick2", 
-		state:"Offline", city:"Ostrava"},
-		{ imageLink: "https://i.pravatar.cc/400?img=3", nickname: "Nick3",
-		state:"Offline", city:"Ostrava"},
-		{ imageLink: "https://i.pravatar.cc/400?img=4", nickname: "Nick4",
-		state:"Offline", city:"Ostrava"},
-		{ imageLink: "https://i.pravatar.cc/400?img=5", nickname: "Nick5", 
-		state:"Offline", city:"Ostrava"},
-		{ imageLink: "https://i.pravatar.cc/400?img=6", nickname: "Nick6", 
-		state:"Offline", city:"Ostrava"}
-	];
-	
-	let SortedPersons = persons;
+  let sortedPersons = people;
 
   function Sort(event) {
-		let parms = event.detail;
-		let sorted = persons;
-		sorted = sorted.includes(SortByName(parms.name));
-		alert ( sorted.length);
-		sorted = sorted.includes(SortByState(parms.state));
-		sorted = sorted.includes(SortByCity(parms.city));
-		SortedPersons = sorted;
-	}
-	
+    let parms = event.detail;
+    //parametry funguji
+    let sorted = people;
+    if (parms.name) {
+      sorted = sorted.filter(SortByName(parms.name));
+      console.log(
+        "name filtred name : " + parms.name + "length:" + sorted.length
+      );
+    }
 
-  function SortByName(item , name) {
+    if (parms.state !== "Select state") {
+      sorted = sorted.filter(SortByState(parms.state));
+      console.log(
+        "state filtred state: " + parms.state + "    length:" + sorted.length
+      );
+    }
+
+    if (parms.city) {
+      sorted = sorted.filter(SortByCity(parms.city));
+      console.log(
+        "city filtred city: " + parms.city + "    length:" + sorted.length
+      );
+    }
+
+    if (HobbiesSelected(parms.hobbies)) {
+      sorted = sorted.filter(SortByHobbies(parms.hobbies));
+      console.log("hobbies filtred length: " + sorted.length);
+    }
+    sortedPersons = sorted;
+    console.log(sorted.length + "end");
+  }
+  function SortByName(name) {
+    return function(item) {
       return item.nickname.includes(name);
+    };
   }
 
-  function SortByState(item , state) {
-    return item.state == state;
+  function SortByState(state) {
+    return function(item) {
+      return item.state === state;
+    };
   }
 
-  function SortByCity(item, city) {
-    return item.city == city;
-	}
-	
-	function SortByHobbies(item, hobbies) {
+  function SortByCity(city) {
+    return function(item) {
+      return item.city === city;
+    };
+  }
 
-	}
+  function SortByHobbies(hobbies) {
+    return function(item) {
+      for (var hobby in hobbies) {
+        //console.log(hobby + " - item: " + item.hobbies[hobby] + " hobbies: " + hobbies[hobby] );
+        if (item.hobbies[hobby] == true && hobbies[hobby] == true) {
+          return true;
+        }
+      }
+      return false;
+    };
+  }
 
+  function HobbiesSelected(hobbies) {
+    console.log("start");
+    for (var hobby in hobbies) {
+      if (hobbies[hobby]) {
+        console.log(hobbies[hobby]);
+        return true;
+      }
+      console.log(hobbies[hobby]);
+    }
+    console.log("end ");
+    return false;
+  }
 </script>
 
 <style>
@@ -71,9 +103,9 @@
   </div>
   <br class="margin" />
   <div class="container">
-    <div class="columns is-centered" style="padding: 2rem">
+    <div class="columns is-centered is-multiline" style="padding: 2rem">
       {#each SortedPersons as person, i}
-        <div class="columns">
+        <div class="column is-2">
           <Card bind:userInfo={person} />
         </div>
       {/each}

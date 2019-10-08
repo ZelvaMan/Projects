@@ -1,0 +1,3 @@
+
+-  Upravit vzhled Formu
+-  Zpravit zobrazovani car, omezeny pocet na radek a stala velikost 
