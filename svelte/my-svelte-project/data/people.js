@@ -3,7 +3,7 @@ export default
     [
         {
             imageLink: "https://i.pravatar.cc/400?img=1",
-            nickname: "Nick",
+            nickname: "Nick",   
             state: "Offline",
             city: "Ostrava",
             hobbies: {

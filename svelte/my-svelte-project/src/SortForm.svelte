@@ -6,10 +6,17 @@
   let Hobbies = {football: false, reading:false, 
                  running: false, skating: false,
                  fishing: false, drawing: false};
+
+  $:{
+    let x = Name;
+    let y = City;
+    ParmChanged();
+  }
   function ParmChanged() {
-    dispatch("parmChanged", {
+    let data = {
       name: Name, state: State, city:City, hobbies : Hobbies
-    });
+    };
+    dispatch("parmChanged", data);
   }
 </script>
 
