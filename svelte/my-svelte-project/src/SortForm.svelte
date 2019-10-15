@@ -2,35 +2,71 @@
   import { createEventDispatcher } from "svelte";
   const dispatch = createEventDispatcher();
 
-  let Name, State, City;
-  let Hobbies = {football: false, reading:false, 
-                 running: false, skating: false,
-                 fishing: false, drawing: false};
+  export let filteredHobbies = undefined;
+  console.log(filteredHobbies);
+  let Name = "", State = "", City = "";
+  let Hobbies = {
+    football: false,
+    reading: false,
+    running: false,
+    skating: false,
+    fishing: false,
+    drawing: false
+  };
+  
 
-  $:{
+  function ChangeHobbies(hobbies) {
+    if (hobbies != undefined && hobbies != null) {
+     for(let hobby in Hobbies){
+        console.log("hobby = " + hobby);
+        if (hobbies == hobby) {
+          Hobbies[hobby] = true;
+        }
+      }
+      ParmChanged();
+    }
+  }
+
+  
+  function ParmChanged() {
+    console.log("parameters changed")
+    let data = {
+      name: Name,
+      state: State,
+      city: City,
+      hobbies: Hobbies
+    };
+
+    dispatch("parmChanged", data);
+    console.log("dispatched");
+    console.log(data)
+    
+  }
+  $: ChangeHobbies(filteredHobbies);
+  $: {
     let x = Name;
     let y = City;
     ParmChanged();
-  }
-  function ParmChanged() {
-    let data = {
-      name: Name, state: State, city:City, hobbies : Hobbies
-    };
-    dispatch("parmChanged", data);
   }
 </script>
 
 <form id="SortForm">
   <div class="box">
-  <h1><strong>Search by</strong></h1>
+    <h1>
+      <strong>Search by</strong>
+    </h1>
     <div class="columns">
       <div class="column">
 
-        <input class="input" type="text" placeholder="Name" bind:value={Name} 
-        on:change={ParmChanged}/>
-        <br/>
+        <input
+          class="input"
+          type="text"
+          placeholder="Name"
+          bind:value={Name}
+          on:change={ParmChanged} />
+        <br />
         <div class="control">
-          <div class="select" >
+          <div class="select">
             <select bind:value={State} on:change={ParmChanged}>
               <option>Select state</option>
               <option>Online</option>
@@ -41,42 +77,58 @@
         </div>
       </div>
       <div class="column">
-        <input class="input" type="text" placeholder="City" bind:value={City} 
-        on:change={ParmChanged}/>
+        <input
+          class="input"
+          type="text"
+          placeholder="City"
+          bind:value={City}
+          on:change={ParmChanged} />
         <div class="box">
           <h1>Hobbies</h1>
           <div class="columns">
             <div class="column">
               <label class="checkbox">
-                <input type="checkbox" bind:checked={Hobbies.football} 
-                on:change={ParmChanged}/>
+                <input
+                  type="checkbox"
+                  bind:checked={Hobbies.football}
+                  on:change={ParmChanged} />
                 football
               </label>
               <label class="checkbox">
-                <input type="checkbox" bind:checked={Hobbies.reading}
-                on:change={ParmChanged}/>
+                <input
+                  type="checkbox"
+                  bind:checked={Hobbies.reading}
+                  on:change={ParmChanged} />
                 reading
               </label>
               <label class="checkbox">
-                <input type="checkbox" bind:checked={Hobbies.running}
-                on:change={ParmChanged}/>
+                <input
+                  type="checkbox"
+                  bind:checked={Hobbies.running}
+                  on:change={ParmChanged} />
                 running
               </label>
             </div>
-             <div class="column">
+            <div class="column">
               <label class="checkbox">
-                <input type="checkbox" bind:checked={Hobbies.skating}
-                on:change={ParmChanged}/>
+                <input
+                  type="checkbox"
+                  bind:checked={Hobbies.skating}
+                  on:change={ParmChanged} />
                 skating
               </label>
               <label class="checkbox">
-                <input type="checkbox" bind:checked={Hobbies.fishing}
-                on:change={ParmChanged}/>
+                <input
+                  type="checkbox"
+                  bind:checked={Hobbies.fishing}
+                  on:change={ParmChanged} />
                 fishing
               </label>
               <label class="checkbox">
-                <input type="checkbox" bind:checked={Hobbies.drawing}
-                on:change={ParmChanged}/>
+                <input
+                  type="checkbox"
+                  bind:checked={Hobbies.drawing}
+                  on:change={ParmChanged} />
                 drawing
               </label>
             </div>

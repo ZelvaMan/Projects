@@ -1,7 +1,16 @@
 
+  export function Find(name,people){
+    let filtred =  people.find(function(element) {
+      return element.nickname == name;
+    });
+
+    return filtred;
+  }
+
+
 
   export function Sort(parms,people) {
-    console.log("Sorting started");
+    console.log(parms);
     //parametry funguji
     let sorted = people;
     if(!parms)
@@ -19,6 +28,7 @@
     }
 
     if (HobbiesSelected(parms.hobbies)) {
+      console.log("hobbies selected")
       sorted = sorted.filter(SortByHobbies(parms.hobbies));
     }
     return sorted;
@@ -45,8 +55,9 @@
   function SortByHobbies(hobbies) {
     return function(item) {
       for (var hobby in hobbies) {
-        //console.log(hobby + " - item: " + item.hobbies[hobby] + " hobbies: " + hobbies[hobby] );
-        if (item.hobbies[hobby] == true && hobbies[hobby] == true) {
+        console.log("hobby");
+        if (item.hobbies.includes(hobby) && hobbies[hobby] == true) {
+          console.log("+1");
           return true;
         }
       }
