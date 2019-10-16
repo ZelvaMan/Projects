@@ -10,8 +10,8 @@
   let Name = "",
     State = "",
     City = "";
-
-  let Hobbies = {
+  let Hobbies = false;
+  let allFalse = {
     football: false,
     reading: false,
     running: false,
@@ -21,7 +21,11 @@
   };
 
   function ChangeHobbies(filterName, filterValue) {
-    console.log("funguje")
+    console.log("funguje");
+    Hobbies = allFalse;
+    Name = "";
+    City = "";
+    State = "Select state";
     if (filterName && filterValue) {
       switch (filterName.toLowerCase()) {
         case "hobby":
