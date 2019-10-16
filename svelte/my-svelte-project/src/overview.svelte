@@ -3,12 +3,14 @@
   import people from "../data/people.js";
   import {Sort} from "../helpers/filter.js";
   import Card from "./Card.svelte";
-    export let params = {};
+  
+  export let params = {};
+  
   console.log(people);
 
   let parameters;
   
-  $: filteredPeople = Sort(parameters,people);
+  $: filteredPeople = Sort(parameters, people);
 
 
   function ChangeParms(event){
@@ -27,8 +29,8 @@
 </style>
 
 <div class="section">
-  <div class="container">
-    <SortForm on:parmChanged={ChangeParms} filteredHobbies={params.filtervalue}/>
+  <div class="container">      
+    <SortForm on:parmChanged={ChangeParms} filterName={params.filtername} filterValue={params.filtervalue} />
   </div>
   <br class="margin" />
   <div class="container">

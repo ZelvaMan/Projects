@@ -6,8 +6,8 @@
   let nick = params.wild;
   let person = Find(nick, people);
 
-  function CreateUrl(hobby) {
-    return "/filter/hobby/" + hobby;
+  function CreateUrl(filterName, filterValue) {
+    return `/filter/${filterName}/${filterValue}`;
   }
 </script>
 
@@ -54,7 +54,7 @@
         <b>
           {#each person.hobbies as hobby}
             {#if hobby}
-              <a href={CreateUrl(hobby)} use:link>{hobby}</a>
+              <a href={CreateUrl('hobby', hobby)} use:link>{hobby}</a>
               ,
             {/if}
           {/each}

@@ -5,7 +5,9 @@
   import {link} from 'svelte-spa-router';
   export let name = "honza";
   let  today = new Date();
+  
   var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  
   const routes = {
     '/filter/:filtername/:filtervalue': overview,
     '/': overview,

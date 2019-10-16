@@ -1,13 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\C#",
-    "\\C#\\ASP.NET Core",
-    "\\C#\\ASP.NET Core\\ProductsManager",
-    "\\C#\\ASP.NET Core\\ProductsManager\\ProductsManager",
-    "\\C#\\ASP.NET Core\\ProductsManager\\ProductsManager\\Controlers",
-    "\\C#\\ASP.NET Core\\ProductsManager\\ProductsManager\\Models"
+    "\\svelte",
+    "\\svelte\\JohnyPetka.DatingService.Web",
+    "\\svelte\\JohnyPetka.DatingService.Web\\JohnyPetka.DatingService.Web"
   ],
-  "SelectedNode": "\\C#\\ASP.NET Core\\ProductsManager\\ProductsManager.sln",
   "PreviewInSolutionExplorer": false
 }

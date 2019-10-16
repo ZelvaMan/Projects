@@ -2,8 +2,15 @@
   import { createEventDispatcher } from "svelte";
   const dispatch = createEventDispatcher();
 
+  export let filterName = undefined;
+  export let filterValue = undefined;
+
   export let filteredHobbies = undefined;
-  let Name = "", State = "", City = "";
+
+  let Name = "",
+    State = "",
+    City = "";
+
   let Hobbies = {
     football: false,
     reading: false,
@@ -12,21 +19,36 @@
     fishing: false,
     drawing: false
   };
-  
 
-  function ChangeHobbies(hobbies) {
-    if (hobbies != undefined && hobbies != null) {
-     for(let hobby in Hobbies){
-        if (hobbies == hobby) {
-          Hobbies[hobby] = true;
-        }
+  function ChangeHobbies(filterName, filterValue) {
+    console.log("funguje")
+    if (filterName && filterValue) {
+      switch (filterName.toLowerCase()) {
+        case "hobby":
+          console.log("hobby parm")
+          for (let hobby in Hobbies) {
+            if (filterValue == hobby) {
+              Hobbies[hobby] = true;
+              console.log("url changed");
+            }
+          }
+          break;
+          case"name":
+            Name = filterValue;
+          break;
+          case"city":
+            City = filterValue;
+          break;
+          case"state":
+    
+          break
       }
     }
   }
 
-  
   function ParmChanged() {
-    console.log("parameters changed")
+    console.log("parameters changed");
+
     let data = {
       name: Name,
       state: State,
@@ -37,12 +59,14 @@
     dispatch("parmChanged", data);
     console.log("dispatched");
     console.log(data);
-    
   }
-  $: ChangeHobbies(filteredHobbies);
+
+  $: {ChangeHobbies(filterName, filterValue); ParmChanged();};
+
   $: {
     let x = Name;
     let y = City;
+
     ParmChanged();
   }
 </script>
