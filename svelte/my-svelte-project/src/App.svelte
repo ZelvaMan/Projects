@@ -4,7 +4,8 @@
   import Router from 'svelte-spa-router';
   import {link} from 'svelte-spa-router';
   export let name = "honza";
-  let  currentTime = new Date();
+  let  today = new Date();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
   const routes = {
     '/filter/:filtername/:filtervalue': overview,
     '/': overview,
@@ -18,7 +19,7 @@
     <a class="button is-dark" href="/" use:link>overview</a> 
   </div>
   <div class="level-right">
-    <h2>time : {currentTime}</h2>
+    <h2>time : {time}</h2>
   </div>
 </nav>
 <div class="section">

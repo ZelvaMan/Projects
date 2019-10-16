@@ -1,5 +1,5 @@
 <script>
-import {link} from 'svelte-spa-router';
+  import {link} from 'svelte-spa-router';
   export let userInfo;
   let url = "/personDetail/" + userInfo.nickname;
 </script>

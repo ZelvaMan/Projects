@@ -1,3 +1,4 @@
-
--  Upravit vzhled Formu
--  Zpravit zobrazovani car, omezeny pocet na radek a stala velikost 
+- dodelat filtraci jak jsme se bavili vcera
+- vytvorit asp.net core aplikaci, ktera bude poskytovat data
+- napojit filtr a informace o uzivatelich na asp.net core
+- vytvorit registracni obrazovku a login

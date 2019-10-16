@@ -3,7 +3,6 @@
   const dispatch = createEventDispatcher();
 
   export let filteredHobbies = undefined;
-  console.log(filteredHobbies);
   let Name = "", State = "", City = "";
   let Hobbies = {
     football: false,
@@ -18,12 +17,10 @@
   function ChangeHobbies(hobbies) {
     if (hobbies != undefined && hobbies != null) {
      for(let hobby in Hobbies){
-        console.log("hobby = " + hobby);
         if (hobbies == hobby) {
           Hobbies[hobby] = true;
         }
       }
-      ParmChanged();
     }
   }
 
@@ -39,7 +36,7 @@
 
     dispatch("parmChanged", data);
     console.log("dispatched");
-    console.log(data)
+    console.log(data);
     
   }
   $: ChangeHobbies(filteredHobbies);
@@ -68,7 +65,7 @@
         <div class="control">
           <div class="select">
             <select bind:value={State} on:change={ParmChanged}>
-              <option>Select state</option>
+              <option selected>Select state</option>
               <option>Online</option>
               <option>Away</option>
               <option>Offline</option>
