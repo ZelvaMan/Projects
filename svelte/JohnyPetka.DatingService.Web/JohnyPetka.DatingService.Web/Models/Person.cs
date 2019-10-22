@@ -22,19 +22,37 @@ namespace JohnyPetka.DatingService.Web
 		}
 
 		public string City;
-		public List<Hobby> Hobbies;
+		public List<string> Hobbies;
 		public string ImageLink;
 
 		public string Nickname;
 		public StateEnum State;
 
-		public Person(string imageLink, string nickname, StateEnum state, string city, List<Hobby> hobbie)
+		public Person(string imageLink, string nickname, StateEnum state, string city, List<string> hobbie)
 		{
 			Hobbies = hobbie;
 			State = state;
 			Nickname = nickname;
 			City = city;
 			ImageLink = imageLink;
+		}
+
+		public static StateEnum GetStateEnum(string enumstring)
+		{
+			switch (enumstring)
+			{
+				case "Offline":
+					return StateEnum.Offline;
+				break;
+				case "Online":
+					return StateEnum.Online;
+				break;
+				case "Away":
+					return StateEnum.Away;
+				break;
+			}
+
+			return StateEnum.Offline;
 		}
 	}
 }

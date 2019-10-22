@@ -8,7 +8,7 @@ namespace JohnyPetka.DatingService.Web
 {
 	public class Filter
 	{
-		public List<Person> FilterPeople(string nickname, string city, List<Person.Hobby> hobbies, Person.StateEnum state)
+		public List<Person> FilterPeople(string nickname, string city, List<string> hobbies, Person.StateEnum state)
 		{
 			var filtered = ApplicationState.People;
 			if (nickname != null)
