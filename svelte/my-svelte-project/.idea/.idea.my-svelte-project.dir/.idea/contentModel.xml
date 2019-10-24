@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Dokumenty\GIT\Projects\svelte\my-svelte-project" t="IncludeFlat">
+      <e p="node_modules\@types" t="IncludeRecursive">
+        <e p="node" t="IncludeRecursive" />
+      </e>
+      <e p="node_modules\bulma" t="IncludeRecursive" />
+      <e p="node_modules\chokidar" t="IncludeRecursive" />
+      <e p="node_modules\commander" t="IncludeRecursive" />
+      <e p="node_modules\estree-walker" t="IncludeRecursive" />
+      <e p="node_modules\is-reference" t="IncludeRecursive" />
+      <e p="node_modules\kleur" t="IncludeRecursive" />
+      <e p="node_modules\magic-string" t="IncludeRecursive" />
+      <e p="node_modules\npm-run-all" t="IncludeRecursive" />
+      <e p="node_modules\rollup" t="IncludeRecursive" />
+      <e p="node_modules\rollup-plugin-commonjs" t="IncludeRecursive" />
+      <e p="node_modules\rollup-plugin-livereload" t="IncludeRecursive" />
+      <e p="node_modules\rollup-plugin-node-resolve" t="IncludeRecursive" />
+      <e p="node_modules\rollup-plugin-svelte" t="IncludeRecursive" />
+      <e p="node_modules\rollup-plugin-terser" t="IncludeRecursive" />
+      <e p="node_modules\rollup-pluginutils" t="IncludeRecursive" />
+      <e p="node_modules\sirv-cli" t="IncludeRecursive" />
+      <e p="node_modules\source-map" t="IncludeRecursive" />
+      <e p="node_modules\sourcemap-codec" t="IncludeRecursive" />
+      <e p="node_modules\svelte" t="IncludeRecursive" />
+      <e p="node_modules\terser" t="IncludeRecursive" />
+      <e p="node_modules\upath" t="IncludeRecursive" />
+    </e>
+    <e p="C:\Users\ZelvaMan\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\ZelvaMan\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_.19.00" t="ExcludeRecursive" />
+  </component>
+</project>
