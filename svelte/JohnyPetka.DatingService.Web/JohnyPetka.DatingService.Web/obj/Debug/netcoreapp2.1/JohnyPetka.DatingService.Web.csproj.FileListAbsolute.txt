@@ -1,0 +1,11 @@
+C:\Users\jan.rada\Documents\GitHub\MyProjects\svelte\JohnyPetka.DatingService.Web\JohnyPetka.DatingService.Web\bin\Debug\netcoreapp2.1\JohnyPetka.DatingService.Web.deps.json
+C:\Users\jan.rada\Documents\GitHub\MyProjects\svelte\JohnyPetka.DatingService.Web\JohnyPetka.DatingService.Web\bin\Debug\netcoreapp2.1\JohnyPetka.DatingService.Web.runtimeconfig.json
+C:\Users\jan.rada\Documents\GitHub\MyProjects\svelte\JohnyPetka.DatingService.Web\JohnyPetka.DatingService.Web\bin\Debug\netcoreapp2.1\JohnyPetka.DatingService.Web.runtimeconfig.dev.json
+C:\Users\jan.rada\Documents\GitHub\MyProjects\svelte\JohnyPetka.DatingService.Web\JohnyPetka.DatingService.Web\bin\Debug\netcoreapp2.1\JohnyPetka.DatingService.Web.dll
+C:\Users\jan.rada\Documents\GitHub\MyProjects\svelte\JohnyPetka.DatingService.Web\JohnyPetka.DatingService.Web\obj\Debug\netcoreapp2.1\JohnyPetka.DatingService.Web.csprojAssemblyReference.cache
+C:\Users\jan.rada\Documents\GitHub\MyProjects\svelte\JohnyPetka.DatingService.Web\JohnyPetka.DatingService.Web\obj\Debug\netcoreapp2.1\JohnyPetka.DatingService.Web.csproj.CoreCompileInputs.cache
+C:\Users\jan.rada\Documents\GitHub\MyProjects\svelte\JohnyPetka.DatingService.Web\JohnyPetka.DatingService.Web\obj\Debug\netcoreapp2.1\JohnyPetka.DatingService.Web.RazorAssemblyInfo.cache
+C:\Users\jan.rada\Documents\GitHub\MyProjects\svelte\JohnyPetka.DatingService.Web\JohnyPetka.DatingService.Web\obj\Debug\netcoreapp2.1\JohnyPetka.DatingService.Web.RazorAssemblyInfo.cs
+C:\Users\jan.rada\Documents\GitHub\MyProjects\svelte\JohnyPetka.DatingService.Web\JohnyPetka.DatingService.Web\obj\Debug\netcoreapp2.1\JohnyPetka.DatingService.Web.AssemblyInfoInputs.cache
+C:\Users\jan.rada\Documents\GitHub\MyProjects\svelte\JohnyPetka.DatingService.Web\JohnyPetka.DatingService.Web\obj\Debug\netcoreapp2.1\JohnyPetka.DatingService.Web.AssemblyInfo.cs
+C:\Users\jan.rada\Documents\GitHub\MyProjects\svelte\JohnyPetka.DatingService.Web\JohnyPetka.DatingService.Web\obj\Debug\netcoreapp2.1\JohnyPetka.DatingService.Web.RazorTargetAssemblyInfo.cache
