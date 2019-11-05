@@ -11920,23 +11920,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jan.rada\\.nuget\\packages\\": {},
+    "C:\\Users\\ZelvaMan\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jan.rada\\Documents\\GitHub\\MyProjects\\svelte\\JohnyPetka.DatingService.Web\\JohnyPetka.DatingService.Web\\JohnyPetka.DatingService.Web.csproj",
+      "projectUniqueName": "C:\\Dokumenty\\GIT\\Projects\\svelte\\JohnyPetka.DatingService.Web\\JohnyPetka.DatingService.Web\\JohnyPetka.DatingService.Web.csproj",
       "projectName": "JohnyPetka.DatingService.Web",
-      "projectPath": "C:\\Users\\jan.rada\\Documents\\GitHub\\MyProjects\\svelte\\JohnyPetka.DatingService.Web\\JohnyPetka.DatingService.Web\\JohnyPetka.DatingService.Web.csproj",
-      "packagesPath": "C:\\Users\\jan.rada\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jan.rada\\Documents\\GitHub\\MyProjects\\svelte\\JohnyPetka.DatingService.Web\\JohnyPetka.DatingService.Web\\obj\\",
+      "projectPath": "C:\\Dokumenty\\GIT\\Projects\\svelte\\JohnyPetka.DatingService.Web\\JohnyPetka.DatingService.Web\\JohnyPetka.DatingService.Web.csproj",
+      "packagesPath": "C:\\Users\\ZelvaMan\\.nuget\\packages\\",
+      "outputPath": "C:\\Dokumenty\\GIT\\Projects\\svelte\\JohnyPetka.DatingService.Web\\JohnyPetka.DatingService.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\jan.rada\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ZelvaMan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11972,6 +11972,7 @@
             "version": "[2.1.2, )"
           },
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
