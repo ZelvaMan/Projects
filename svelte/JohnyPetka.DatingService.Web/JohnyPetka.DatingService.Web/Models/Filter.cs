@@ -6,9 +6,9 @@ using Remotion.Linq.Clauses;
 
 namespace JohnyPetka.DatingService.Web
 {
-	public static class Filter
+	public class Filter
 	{
-		public static List<Person> FilterPeople(string nickname, string city, List<string> hobbies, Person.StateEnum state)
+		public List<Person> FilterPeople(string nickname, string city, List<string> hobbies, Person.StateEnum state)
 		{
 			var filtered = ApplicationState.People;
 			if (nickname != null)
@@ -23,14 +23,20 @@ namespace JohnyPetka.DatingService.Web
 											where (person.City == city)
 					select person).ToList();
 			}
-			if (hobbies.Count != 0)
+			if (state != null)
+			{
+				 filtered = (from person in filtered
+											where (person.State == state)
+					select person).ToList();
+			}
+			if (hobbies != null || hobbies.Count != 0)
 			{
 				filtered = (from person in filtered
 					where (hobbies.Intersect(person.Hobbies).Count() > 0)
 					select person).ToList();
 			}
 
-			if (state != null && state != Person.StateEnum.SelectState)
+			if (state != null)
 			{
 				filtered = (from person in filtered
 					where (person.State == state)

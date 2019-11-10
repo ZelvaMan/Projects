@@ -21,6 +21,7 @@
   };
 
   function ChangeHobbies(filterName, filterValue) {
+    console.log("funguje");
     Hobbies = allFalse;
     Name = "";
     City = "";
@@ -28,9 +29,11 @@
     if (filterName && filterValue) {
       switch (filterName.toLowerCase()) {
         case "hobby":
+          console.log("hobby parm")
           for (let hobby in Hobbies) {
             if (filterValue == hobby) {
               Hobbies[hobby] = true;
+              console.log("url changed");
             }
           }
           break;
@@ -48,6 +51,7 @@
   }
 
   function ParmChanged() {
+    console.log("parameters changed");
 
     let data = {
       name: Name,
@@ -58,6 +62,7 @@
 
     dispatch("parmChanged", data);
     console.log("dispatched");
+    console.log(data);
   }
 
   $: {ChangeHobbies(filterName, filterValue); ParmChanged();};
