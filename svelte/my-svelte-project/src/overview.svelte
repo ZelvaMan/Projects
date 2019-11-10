@@ -1,23 +1,34 @@
- <script>
- import SortForm from "./SortForm.svelte";
-  import people from "../data/people.js";
-  import {Sort} from "../helpers/filter.js";
+<script>
+  import SortForm from "./SortForm.svelte";
+  import { Sort } from "../helpers/filter.js";
   import Card from "./Card.svelte";
-  
+
   export let params = {};
-  
-  console.log(people);
+  let parameters = null;
+  const BaseAPiUrl = "https://localhost:44360/api/Users/GetUsers";
+  let filteredPeople;
 
-  let parameters;
-  
-  $: filteredPeople = Sort(parameters, people);
+  $: filteredPeople = LoadFromApi(parameters);
 
+  async function LoadFromApi(parms) {
+    let url = null;
+    console.log("fetch URL:" + url);
+    const response = await fetch(BaseAPiUrl);
+    filteredPeople = await response.json();
+    console.log(filteredPeople);
+  }
 
-  function ChangeParms(event){
-    console.log("event handled");
-    console.log("event details:" + event.detail);
-    if(event)
-      parameters = event.detail;
+  function ChangeParms(event) {
+    if (event) parameters = event.detail;
+  }
+
+  function LogProperties() {
+    console.log("filteredPeople:");
+    console.log(filteredPeople);
+
+    console.log("----------------------------------------");
+    console.log("params:");
+    console.log(parameters);
   }
 </script>
 
@@ -25,21 +36,31 @@
   .margin {
     margin-bottom: 200px;
   }
-
 </style>
 
 <div class="section">
-  <div class="container">      
-    <SortForm on:parmChanged={ChangeParms} filterName={params.filtername} filterValue={params.filtervalue} />
+<button on:click = {LogProperties}>LOG</button>
+  <div class="container">
+    <SortForm
+      on:parmChanged={ChangeParms}
+      filterName={params.filtername}
+      filterValue={params.filtervalue} />
   </div>
   <br class="margin" />
   <div class="container">
     <div class="columns is-centered is-multiline" style="padding: 2rem">
-      {#each filteredPeople as person, i}
-        <div class="column is-2">
-          <Card bind:userInfo={person} />
-        </div>
-      {/each} 
+      {#if filteredPeople == null || filteredPeople == undefined}
+        <h1>LOADING FROM DATABASE</h1>
+      {:else}
+      
+        else
+        {#each filteredPeople as person}
+        
+          <div class="column is-2">
+            <Card bind:userInfo={person} />
+          </div>
+        {/each}
+      {/if}
     </div>
   </div>
 </div>

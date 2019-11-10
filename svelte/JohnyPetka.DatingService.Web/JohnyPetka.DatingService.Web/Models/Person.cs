@@ -18,7 +18,8 @@ namespace JohnyPetka.DatingService.Web
 		{
 			Away,
 			Offline,
-			Online
+			Online,
+			SelectState
 		}
 
 		public string City;
@@ -52,7 +53,7 @@ namespace JohnyPetka.DatingService.Web
 				break;
 			}
 
-			return StateEnum.Offline;
+			return StateEnum.SelectState;
 		}
 	}
 }

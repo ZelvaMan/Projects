@@ -23,7 +23,9 @@
       <e p="node_modules\sirv-cli" t="IncludeRecursive" />
       <e p="node_modules\source-map" t="IncludeRecursive" />
       <e p="node_modules\sourcemap-codec" t="IncludeRecursive" />
+      <e p="node_modules\spa-router" t="IncludeRecursive" />
       <e p="node_modules\svelte" t="IncludeRecursive" />
+      <e p="node_modules\svelte-spa-router" t="IncludeRecursive" />
       <e p="node_modules\terser" t="IncludeRecursive" />
       <e p="node_modules\upath" t="IncludeRecursive" />
     </e>
