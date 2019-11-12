@@ -11915,8 +11915,12 @@
     ".NETCoreApp,Version=v2.1": [
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
+<<<<<<< HEAD
       "Microsoft.NETCore.App >= 2.1.0",
       "Npgsql >= 4.1.1"
+=======
+      "Microsoft.NETCore.App >= 2.1.0"
+>>>>>>> parent of 5683bc4... Sss
     ]
   },
   "packageFolders": {
@@ -11976,10 +11980,13 @@
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
+<<<<<<< HEAD
           },
           "Npgsql": {
             "target": "Package",
             "version": "[4.1.1, )"
+=======
+>>>>>>> parent of 5683bc4... Sss
           }
         },
         "imports": [
