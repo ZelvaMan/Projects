@@ -13,7 +13,10 @@
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <PackageReference Include="Npgsql" Version="4.1.1" />
+=======
+>>>>>>> parent of 5683bc4... Sss
 =======
 >>>>>>> parent of 5683bc4... Sss
   </ItemGroup>
