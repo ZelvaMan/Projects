@@ -11917,8 +11917,12 @@
       "Microsoft.AspNetCore.Razor.Design >= 2.1.2",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       "Microsoft.NETCore.App >= 2.1.0",
       "Npgsql >= 4.1.1"
+=======
+      "Microsoft.NETCore.App >= 2.1.0"
+>>>>>>> parent of 5683bc4... Sss
 =======
       "Microsoft.NETCore.App >= 2.1.0"
 >>>>>>> parent of 5683bc4... Sss
@@ -11986,10 +11990,13 @@
             "autoReferenced": true
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           },
           "Npgsql": {
             "target": "Package",
             "version": "[4.1.1, )"
+=======
+>>>>>>> parent of 5683bc4... Sss
 =======
 >>>>>>> parent of 5683bc4... Sss
 =======
