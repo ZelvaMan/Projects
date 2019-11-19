@@ -1,10 +1,6 @@
  <script>
   import SortForm from "./SortForm.svelte";
   import { Sort } from "../helpers/filter.js";
- <script>
- import SortForm from "./SortForm.svelte";
-  import people from "../data/people.js";
-  import {Sort} from "../helpers/filter.js";
   import Card from "./Card.svelte";
 
   
@@ -13,12 +9,8 @@
   const BaseAPiUrl = "https://localhost:44360/api/Users/GetUsers";
   let filteredPeople;
   
-  console.log(people);
 
   $: filteredPeople = LoadFromApi(parameters);
-  let parameters;
-  
-  $: filteredPeople = Sort(parameters, people);
 
   async function LoadFromApi(parms) {
     let url = null;
@@ -39,23 +31,18 @@
     console.log("----------------------------------------");
     console.log("params:");
     console.log(parameters);
-  function ChangeParms(event){
-    console.log("event handled");
-    console.log("event details:" + event.detail);
-    if(event)
-      parameters = event.detail;
   }
 </script>
 
-@ -36,31 +25,21 @@
-  .margin {
+<style>  
+.margin {
     margin-bottom: 200px;
   }
 
 </style>
 
 <div class="section">
-<button on:click = {LogProperties}>LOG</button>
+  <button on:click = {LogProperties}>LOG</button>
   <div class="container">
     <SortForm
       on:parmChanged={ChangeParms}
@@ -86,4 +73,3 @@
       {/each} 
     </div>
   </div>
-</div>
